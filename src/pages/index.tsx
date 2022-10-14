@@ -1,9 +1,11 @@
 import type { NextPage } from "next";
+import LeftPanel from "../components/LeftPanel";
 import Map from "../components/Map";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
+      <LeftPanel />
       <Map />
     </div>
   );

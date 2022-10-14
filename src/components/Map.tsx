@@ -17,7 +17,7 @@ const Map = () => {
       onMove={(evt) => setViewState(evt.viewState)}
       style={{ width: "100vw", height: "100vh" }}
       mapboxAccessToken={mapboxgl.accessToken}
-      mapStyle="mapbox://styles/mapbox/dark-v9"
+      mapStyle="mapbox://styles/mapbox/dark-v10"
     />
   );
 };
