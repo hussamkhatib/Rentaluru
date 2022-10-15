@@ -1,17 +1,24 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import connectToDatabase from "../../../lib/mongodb";
-import data from "../../data";
+import connectToDatabase from "../../../../lib/mongodb";
+import geojson from "../../../data";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   const { db } = await connectToDatabase();
+  const { area_id } = req.query;
+
   const { method } = req;
   if (method === "GET") {
-    const result = await db
+    const data = await db
       .collection("reviews")
       .aggregate([
+        {
+          $match: {
+            area_id: Number(area_id),
+          },
+        },
         {
           $group: {
             _id: "$area_id",
@@ -26,23 +33,9 @@ export default async function handler(
             },
           },
         },
-        {
-          $sort: {
-            _id: 1,
-          },
-        },
       ])
       .toArray();
 
-    data["features"].forEach((area, idx) => {
-      // @ts-ignore
-      area.properties["avgRent"] = result[idx].avgRent;
-      // @ts-ignore
-      area.properties["maxRent"] = result[idx].maxRent;
-      // @ts-ignore
-      area.properties["minRent"] = result[idx].minRent;
-    });
-
-    return res.status(200).send({ data });
+    return res.status(200).send(data);
   }
 }

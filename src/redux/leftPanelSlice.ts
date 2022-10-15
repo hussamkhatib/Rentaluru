@@ -6,8 +6,12 @@ export const slice = createSlice({
   name: "leftPanel",
   initialState,
   reducers: {
-    closeLeftPanel: () => false,
-    openLeftPanel: (state, action) => action.payload,
+    closeLeftPanel: () => {
+      return false;
+    },
+    openLeftPanel: () => {
+      return true;
+    },
   },
 });
 

@@ -5,6 +5,7 @@ import { closeLeftPanel } from "../../redux/leftPanelSlice";
 import DetailsCard from "../DetailsCard";
 import ReviewCard from "../ReviewCard";
 import RatingsCard from "../RatingsCard";
+import { removeActiveArea } from "../../redux/activeAreaSlice";
 
 const tabs = [
   {
@@ -20,15 +21,19 @@ const tabs = [
 
 const LeftPanel = () => {
   const dispatch = useDispatch();
+  const activeArea = useSelector((state: any) => state.activeArea);
   const leftPanelOpen = useSelector((state: any) => state.leftPanel);
 
   return leftPanelOpen ? (
     <div className="fixed z-10 h-3/4 bg-[#0D2337] w-[25rem] p-4 m-5 rounded-2xl overflow-auto overflow-y-scroll scrollbar-thin scrollbar-thumb-[#102B44] scrollbar-track-blue-300 ">
       <div className="flex justify-between ">
-        <p className="text-white">Indira nagar</p>
+        <p className="text-white">{activeArea.name}</p>
         <button
           aria-label="close button"
-          onClick={() => dispatch(closeLeftPanel())}
+          onClick={() => {
+            dispatch(closeLeftPanel());
+            dispatch(removeActiveArea());
+          }}
           className="bg-[#153757] rounded-full"
         >
           <XMarkIcon className="h-6 w-6 text-[#00FFA4]" aria-hidden />
@@ -42,7 +47,7 @@ const LeftPanel = () => {
           <ReviewCard />
           <ReviewCard />
         </div>
-        <div><RatingsCard/></div>
+        <RatingsCard />
       </Tabs>
     </div>
   ) : null;

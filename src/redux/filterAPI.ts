@@ -5,7 +5,6 @@ export const filterApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "/api/",
   }),
-  tagTypes: ["USERFORMS", "FORM"],
   endpoints: (builder) => ({
     getGeojson: builder.query<any, void>({
       query: () => ({

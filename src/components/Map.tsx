@@ -1,9 +1,10 @@
 import mapboxgl from "mapbox-gl";
 import { useCallback, useState } from "react";
-import ReactMap, { Source, Layer, Popup } from "react-map-gl";
+import ReactMap, { Source, Layer } from "react-map-gl";
 import layerStyle from "../layerStyles";
 import { useDispatch } from "react-redux";
 import { openLeftPanel } from "../redux/leftPanelSlice";
+import { setActiveArea } from "../redux/activeAreaSlice";
 import { useGetGeojsonQuery } from "../redux/filterAPI";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
@@ -17,12 +18,15 @@ const Map = () => {
     pitch: 45,
     bearing: 340,
   });
-  const [hoverInfo, setHoverInfo] = useState(null);
+  const [hoverInfo, setHoverInfo] = useState<any>(null);
 
   const handleClick = (e: any) => {
     const { features } = e;
 
-    if (features[0]) dispatch(openLeftPanel(true));
+    if (features[0]) {
+      dispatch(setActiveArea(features[0].properties));
+      dispatch(openLeftPanel());
+    }
   };
 
   /* @ts-ignore TODO: //FIX THIS */
