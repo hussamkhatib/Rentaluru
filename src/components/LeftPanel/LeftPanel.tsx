@@ -2,6 +2,7 @@ import Tabs from "../Tabs";
 import { useDispatch, useSelector } from "react-redux";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { closeLeftPanel } from "../../redux/leftPanelSlice";
+import DetailsCard from "../DetailsCard";
 
 const tabs = [
   {
@@ -30,7 +31,9 @@ const LeftPanel = () => {
           <XMarkIcon className="h-6 w-6 text-[#00FFA4]" aria-hidden />
         </button>
       </div>
-      <Tabs tabs={tabs} />
+      <Tabs tabs={tabs}></Tabs>
+      <div className="border-t border-[#8BA7C1]"></div>
+      <DetailsCard/>
     </div>
   ) : null;
 };

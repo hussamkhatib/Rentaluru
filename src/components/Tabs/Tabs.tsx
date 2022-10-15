@@ -17,6 +17,7 @@ const Tabs: FC<Props> = ({ tabs }) => {
       {tabs.map((tab) => {
         const isCurrent = false;
         return (
+          
           <span
             key={tab.name}
             className={classNames(
