@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import leftPanelReducer from "./leftPanelSlice";
+
 import { filterApi } from "./filterAPI";
 import { areaApi } from "./areaAPI";
+
+import leftPanelReducer from "./leftPanelSlice";
 import activeAreaSlice from "./activeAreaSlice";
+import filterPanelSlice from "./filterPanelSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +13,7 @@ export const store = configureStore({
     [filterApi.reducerPath]: filterApi.reducer,
     leftPanel: leftPanelReducer,
     activeArea: activeAreaSlice,
+    filterPanel: filterPanelSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

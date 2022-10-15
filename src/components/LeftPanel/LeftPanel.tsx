@@ -26,7 +26,7 @@ const LeftPanel = () => {
 
   return leftPanelOpen ? (
     <div className="fixed z-10 h-3/4 bg-[#0D2337] w-[25rem] p-4 m-5 rounded-2xl overflow-auto overflow-y-scroll scrollbar-thin scrollbar-thumb-[#102B44] scrollbar-track-blue-300 ">
-      <div className="flex justify-between ">
+      <div className="flex justify-between">
         <p className="text-white">{activeArea.name}</p>
         <button
           aria-label="close button"
