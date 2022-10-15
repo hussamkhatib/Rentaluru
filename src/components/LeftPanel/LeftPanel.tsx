@@ -21,9 +21,9 @@ const LeftPanel = () => {
   const leftPanelOpen = useSelector((state: any) => state.leftPanel);
 
   return leftPanelOpen ? (
-    <div className="fixed z-10 h-full bg-[#0D2337] w-[25rem] p-4">
+    <div className="fixed z-10 h-3/4 bg-[#0D2337] w-[25rem] p-4 m-5 rounded-2xl">
       <div className="flex justify-between ">
-        <p>Indira nagar</p>
+        <p className="text-white">Indira nagar</p>
         <button
           onClick={() => dispatch(closeLeftPanel())}
           className="bg-[#153757] rounded-full"
