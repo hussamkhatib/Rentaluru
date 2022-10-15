@@ -4,7 +4,7 @@ const data = {
     {
       type: "Feature",
       properties: {
-        value: 72,
+        value: 90,
         area_id: 280,
         name: "indiranagar",
         pin_code: 560038,
@@ -177,7 +177,7 @@ const data = {
     {
       type: "Feature",
       properties: {
-        value: 82,
+        value: 58,
         area_id: 272,
         name: "BENSON TOWN SO",
         pin_code: 560046,
