@@ -6,14 +6,16 @@ import { areaApi } from "./areaAPI";
 import leftPanelReducer from "./leftPanelSlice";
 import activeAreaSlice from "./activeAreaSlice";
 import filterPanelSlice from "./filterPanelSlice";
+import filterSlice from "./filterSlice";
 
 export const store = configureStore({
   reducer: {
     [areaApi.reducerPath]: areaApi.reducer,
     [filterApi.reducerPath]: filterApi.reducer,
+    filterPanel: filterPanelSlice,
+    filter: filterSlice,
     leftPanel: leftPanelReducer,
     activeArea: activeAreaSlice,
-    filterPanel: filterPanelSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

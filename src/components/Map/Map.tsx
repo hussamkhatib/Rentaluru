@@ -12,12 +12,13 @@ mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 const Map = () => {
   const dispatch = useDispatch();
   const [viewState, setViewState] = useState({
-    longitude: 77.47,
+    longitude: 77.57,
     latitude: 12.89,
     zoom: 10.4,
     pitch: 45,
     bearing: 340,
   });
+
   const [hoverInfo, setHoverInfo] = useState<any>(null);
 
   const handleClick = (e: any) => {

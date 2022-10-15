@@ -5,6 +5,7 @@ import {
   toggleFilterPanel,
 } from "../../redux/filterPanelSlice";
 import Disclosure from "../Disclosure";
+import RentFilter from "./RentFilter";
 
 const Filter = () => {
   return (
@@ -41,10 +42,15 @@ const ApplyFilter = () => {
   return filterPanel ? (
     <div className="fixed right-8 w-64 top-0 z-10 h-screen text-white bg-[#0D2337]">
       <div className="mt-6" />
-      <Disclosure title="Rent">the children</Disclosure>
+      <Disclosure title="Rent">
+        <RentFilter />
+      </Disclosure>
       <Disclosure title="Rating">the children</Disclosure>
       <Disclosure title="BHK">the children</Disclosure>
       <Disclosure title="Vehicle">the children</Disclosure>
+      <button className="bg-[#00FFA4] text-[#102B44] px-2 py-1 rounded w-full my-2 mx-4">
+        Apply Filter
+      </button>
     </div>
   ) : null;
 };
