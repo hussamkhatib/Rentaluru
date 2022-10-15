@@ -1,13 +1,14 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from "next";
+import connectToDatabase from "../../../lib/mongodb";
 
-type Data = {
-  name: string
-}
-
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  const { db } = await connectToDatabase();
+  const { method } = req;
+  if (method === "GET") {
+    const data = await db.collection("brokers").find({}).toArray();
+    return res.status(200).send({ data });
+  }
 }

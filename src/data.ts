@@ -13,7 +13,6 @@ const data = {
             "area_id": 203,
             "name": "WHITE FIELD SO",
             "pin_code": 560066,
-            "averageRent": 90
         },
         "geometry": {
             "type": "Polygon",
@@ -405,7 +404,6 @@ const data = {
             "area_id": 204,
             "name": "YESHWANTHPUR PO",
             "pin_code": 560022,
-            "averageRent": 56
         },
         "geometry": {
             "type": "Polygon",
@@ -1493,7 +1491,6 @@ const data = {
             "area_id": 205,
             "name": "R M V IIND STAGE EXTN. SO",
             "pin_code": 560094,
-            "averageRent": 16
         },
         "geometry": {
             "type": "Polygon",
@@ -1905,7 +1902,6 @@ const data = {
             "area_id": 206,
             "name": "H K P Road",
             "pin_code": 560051,
-            "averageRent": 16
         },
         "geometry": {
             "type": "Polygon",
@@ -2081,7 +2077,6 @@ const data = {
             "area_id": 207,
             "name": "Achitnagar",
             "pin_code": 560107,
-            "averageRent": 55
         },
         "geometry": {
             "type": "Polygon",
@@ -2689,7 +2684,6 @@ const data = {
             "area_id": 208,
             "name": "JC NAGAR",
             "pin_code": 560006,
-            "averageRent": 79
         },
         "geometry": {
             "type": "Polygon",
@@ -3269,7 +3263,6 @@ const data = {
             "area_id": 209,
             "name": "JALAHALLI HO",
             "pin_code": 560013,
-            "averageRent": 18
         },
         "geometry": {
             "type": "Polygon",
@@ -4469,7 +4462,6 @@ const data = {
             "area_id": 210,
             "name": "BIAL SO",
             "pin_code": 560300,
-            "averageRent": 79
         },
         "geometry": {
             "type": "Polygon",
@@ -4949,7 +4941,6 @@ const data = {
             "area_id": 211,
             "name": "KG Road PO (Good)",
             "pin_code": 560009,
-            "averageRent": 77
         },
         "geometry": {
             "type": "Polygon",
@@ -5245,7 +5236,6 @@ const data = {
             "area_id": 212,
             "name": "Bommasandra Industrial area",
             "pin_code": 560099,
-            "averageRent": 24
         },
         "geometry": {
             "type": "Polygon",
@@ -6493,7 +6483,6 @@ const data = {
             "area_id": 213,
             "name": "DASARAHALLI PO",
             "pin_code": 560057,
-            "averageRent": 4
         },
         "geometry": {
             "type": "Polygon",
@@ -7069,7 +7058,6 @@ const data = {
             "area_id": 214,
             "name": "kumbalagodu po",
             "pin_code": 560074,
-            "averageRent": 49
         },
         "geometry": {
             "type": "Polygon",
@@ -7577,7 +7565,6 @@ const data = {
             "area_id": 215,
             "name": "Udayapura SO",
             "pin_code": 560082,
-            "averageRent": 10
         },
         "geometry": {
             "type": "Polygon",
@@ -8069,7 +8056,6 @@ const data = {
             "area_id": 216,
             "name": "agram",
             "pin_code": 560007,
-            "averageRent": 62
         },
         "geometry": {
             "type": "Polygon",
@@ -8637,7 +8623,6 @@ const data = {
             "area_id": 217,
             "name": "Rajajinagar Ho new Good",
             "pin_code": 560010,
-            "averageRent": 85
         },
         "geometry": {
             "type": "Polygon",
@@ -9865,7 +9850,6 @@ const data = {
             "area_id": 218,
             "name": "VARTHUR",
             "pin_code": 560087,
-            "averageRent": 40
         },
         "geometry": {
             "type": "Polygon",
@@ -10285,7 +10269,6 @@ const data = {
             "area_id": 219,
             "name": "Jigani SO",
             "pin_code": 560105,
-            "averageRent": 1
         },
         "geometry": {
             "type": "Polygon",
@@ -11113,7 +11096,6 @@ const data = {
             "area_id": 220,
             "name": "Nagarbhavi SO (Good)",
             "pin_code": 560072,
-            "averageRent": 19
         },
         "geometry": {
             "type": "Polygon",
@@ -11901,7 +11883,6 @@ const data = {
             "area_id": 221,
             "name": "JALAHALLI EAST PO",
             "pin_code": 560014,
-            "averageRent": 17
         },
         "geometry": {
             "type": "Polygon",
@@ -12705,7 +12686,6 @@ const data = {
             "area_id": 222,
             "name": "Mahalakshmipuram SO Good",
             "pin_code": 560086,
-            "averageRent": 23
         },
         "geometry": {
             "type": "Polygon",
@@ -13573,7 +13553,6 @@ const data = {
             "area_id": 223,
             "name": "Basaveswarnagar MDG (Good)",
             "pin_code": 560079,
-            "averageRent": 96
         },
         "geometry": {
             "type": "Polygon",
@@ -14869,7 +14848,6 @@ const data = {
             "area_id": 224,
             "name": "MSRIT POST OFFICE",
             "pin_code": 560054,
-            "averageRent": 39
         },
         "geometry": {
             "type": "Polygon",
@@ -15421,7 +15399,6 @@ const data = {
             "area_id": 225,
             "name": "NANDINI LAYOUT GOOD",
             "pin_code": 560096,
-            "averageRent": 84
         },
         "geometry": {
             "type": "Polygon",
@@ -16257,7 +16234,6 @@ const data = {
             "area_id": 226,
             "name": "HESARAGHATTA",
             "pin_code": 560088,
-            "averageRent": 98
         },
         "geometry": {
             "type": "Polygon",
@@ -17117,7 +17093,6 @@ const data = {
             "area_id": 227,
             "name": "Anjanapura SO",
             "pin_code": 560108,
-            "averageRent": 32
         },
         "geometry": {
             "type": "Polygon",
@@ -17569,7 +17544,6 @@ const data = {
             "area_id": 228,
             "name": "CHIKKABANAVARA",
             "pin_code": 560090,
-            "averageRent": 2
         },
         "geometry": {
             "type": "Polygon",
@@ -19377,7 +19351,6 @@ const data = {
             "area_id": 229,
             "name": "SESHADRIPURAM GOOD",
             "pin_code": 560020,
-            "averageRent": 19
         },
         "geometry": {
             "type": "Polygon",
@@ -19973,7 +19946,6 @@ const data = {
             "area_id": 230,
             "name": "Vijayanagar MDG (Good)",
             "pin_code": 560040,
-            "averageRent": 74
         },
         "geometry": {
             "type": "Polygon",
@@ -20585,7 +20557,6 @@ const data = {
             "area_id": 231,
             "name": "Carmelram PO",
             "pin_code": 560035,
-            "averageRent": 16
         },
         "geometry": {
             "type": "Polygon",
@@ -20909,7 +20880,6 @@ const data = {
             "area_id": 232,
             "name": "RT NAGAR",
             "pin_code": 560032,
-            "averageRent": 34
         },
         "geometry": {
             "type": "Polygon",
@@ -21765,7 +21735,6 @@ const data = {
             "area_id": 233,
             "name": "Srirampura GOOD",
             "pin_code": 560021,
-            "averageRent": 66
         },
         "geometry": {
             "type": "Polygon",
@@ -22473,7 +22442,6 @@ const data = {
             "area_id": 234,
             "name": "Viswaneedam SO (Good)",
             "pin_code": 560091,
-            "averageRent": 8
         },
         "geometry": {
             "type": "Polygon",
@@ -23573,7 +23541,6 @@ const data = {
             "area_id": 235,
             "name": "SHIVARAM KARANTH NAGAR PO",
             "pin_code": 560077,
-            "averageRent": 25
         },
         "geometry": {
             "type": "Polygon",
@@ -23901,7 +23868,6 @@ const data = {
             "area_id": 236,
             "name": "PEENYA SMALL INDUSTRIES PO",
             "pin_code": 560058,
-            "averageRent": 1
         },
         "geometry": {
             "type": "Polygon",
@@ -26125,7 +26091,6 @@ const data = {
             "area_id": 237,
             "name": "HESARAGHATTA LAKE",
             "pin_code": 560089,
-            "averageRent": 5
         },
         "geometry": {
             "type": "Polygon",
@@ -28073,7 +28038,6 @@ const data = {
             "area_id": 238,
             "name": "AIR FORCE STATION YELAHANKA",
             "pin_code": 560063,
-            "averageRent": 60
         },
         "geometry": {
             "type": "Polygon",
@@ -28149,7 +28113,6 @@ const data = {
             "area_id": 239,
             "name": "ELECTRONIC CITY PO",
             "pin_code": 560100,
-            "averageRent": 69
         },
         "geometry": {
             "type": "Polygon",
@@ -28949,7 +28912,6 @@ const data = {
             "area_id": 240,
             "name": "Hampinagar SO (Good)",
             "pin_code": 560104,
-            "averageRent": 74
         },
         "geometry": {
             "type": "Polygon",
@@ -29233,7 +29195,6 @@ const data = {
             "area_id": 241,
             "name": "JALAHALLI WEST PO",
             "pin_code": 560015,
-            "averageRent": 45
         },
         "geometry": {
             "type": "Polygon",
@@ -30301,7 +30262,6 @@ const data = {
             "area_id": 242,
             "name": "VIRGO NAGAR",
             "pin_code": 560049,
-            "averageRent": 67
         },
         "geometry": {
             "type": "Polygon",
@@ -30677,7 +30637,6 @@ const data = {
             "area_id": 243,
             "name": "krishnarajapuram po",
             "pin_code": 560036,
-            "averageRent": 69
         },
         "geometry": {
             "type": "Polygon",
@@ -31285,7 +31244,6 @@ const data = {
             "area_id": 244,
             "name": "MALLESHWARAM GOOD",
             "pin_code": 560003,
-            "averageRent": 59
         },
         "geometry": {
             "type": "Polygon",
@@ -31737,7 +31695,6 @@ const data = {
             "area_id": 245,
             "name": "SADASHIVANAGAR SO",
             "pin_code": 560080,
-            "averageRent": 10
         },
         "geometry": {
             "type": "Polygon",
@@ -31941,7 +31898,6 @@ const data = {
             "area_id": 246,
             "name": "MALLESHWARAM WEST PO GOOD",
             "pin_code": 560055,
-            "averageRent": 99
         },
         "geometry": {
             "type": "Polygon",
@@ -32469,7 +32425,6 @@ const data = {
             "area_id": 247,
             "name": "NAGASANDRA",
             "pin_code": 560073,
-            "averageRent": 8
         },
         "geometry": {
             "type": "Polygon",
@@ -33541,7 +33496,6 @@ const data = {
             "area_id": 248,
             "name": "MUSEUM ROAD S.O.",
             "pin_code": 560025,
-            "averageRent": 84
         },
         "geometry": {
             "type": "Polygon",
@@ -33949,7 +33903,6 @@ const data = {
             "area_id": 249,
             "name": "good koramangla VI Bk 560095",
             "pin_code": 560095,
-            "averageRent": 13
         },
         "geometry": {
             "type": "Polygon",
@@ -34425,7 +34378,6 @@ const data = {
             "area_id": 250,
             "name": "Govt Electric Factory PO",
             "pin_code": 560026,
-            "averageRent": 3
         },
         "geometry": {
             "type": "Polygon",
@@ -35189,7 +35141,6 @@ const data = {
             "area_id": 251,
             "name": "Rajarajeshwari Nagar PO",
             "pin_code": 560098,
-            "averageRent": 13
         },
         "geometry": {
             "type": "Polygon",
@@ -35821,7 +35772,6 @@ const data = {
             "area_id": 252,
             "name": "Magadi Road SO (Good)",
             "pin_code": 560023,
-            "averageRent": 91
         },
         "geometry": {
             "type": "Polygon",
@@ -36465,7 +36415,6 @@ const data = {
             "area_id": 253,
             "name": "Wilson garden",
             "pin_code": 560027,
-            "averageRent": 4
         },
         "geometry": {
             "type": "Polygon",
@@ -36857,7 +36806,6 @@ const data = {
             "area_id": 254,
             "name": "Gavipuram Extension",
             "pin_code": 560019,
-            "averageRent": 23
         },
         "geometry": {
             "type": "Polygon",
@@ -37473,7 +37421,6 @@ const data = {
             "area_id": 255,
             "name": "DR College",
             "pin_code": 560029,
-            "averageRent": 13
         },
         "geometry": {
             "type": "Polygon",
@@ -37933,7 +37880,6 @@ const data = {
             "area_id": 256,
             "name": "Bannerghatta Road",
             "pin_code": 560076,
-            "averageRent": 25
         },
         "geometry": {
             "type": "Polygon",
@@ -39037,7 +38983,6 @@ const data = {
             "area_id": 257,
             "name": "BSK 1st stage",
             "pin_code": 560050,
-            "averageRent": 70
         },
         "geometry": {
             "type": "Polygon",
@@ -39569,7 +39514,6 @@ const data = {
             "area_id": 258,
             "name": "Aduogdi PO",
             "pin_code": 560030,
-            "averageRent": 91
         },
         "geometry": {
             "type": "Polygon",
@@ -39925,7 +39869,6 @@ const data = {
             "area_id": 259,
             "name": "HSR Layout",
             "pin_code": 560102,
-            "averageRent": 44
         },
         "geometry": {
             "type": "Polygon",
@@ -40409,7 +40352,6 @@ const data = {
             "area_id": 260,
             "name": "domlur",
             "pin_code": 560071,
-            "averageRent": 88
         },
         "geometry": {
             "type": "Polygon",
@@ -40929,7 +40871,6 @@ const data = {
             "area_id": 261,
             "name": "Koramangala po",
             "pin_code": 560034,
-            "averageRent": 23
         },
         "geometry": {
             "type": "Polygon",
@@ -41301,7 +41242,6 @@ const data = {
             "area_id": 262,
             "name": "Doorvani Nagar",
             "pin_code": 560016,
-            "averageRent": 17
         },
         "geometry": {
             "type": "Polygon",
@@ -41925,7 +41865,6 @@ const data = {
             "area_id": 263,
             "name": "HAL II STAGE HO",
             "pin_code": 560008,
-            "averageRent": 71
         },
         "geometry": {
             "type": "Polygon",
@@ -42953,7 +42892,6 @@ const data = {
             "area_id": 264,
             "name": "VIMANAPURA",
             "pin_code": 560017,
-            "averageRent": 56
         },
         "geometry": {
             "type": "Polygon",
@@ -43297,7 +43235,6 @@ const data = {
             "area_id": 265,
             "name": "Chamarajpet Good",
             "pin_code": 560018,
-            "averageRent": 40
         },
         "geometry": {
             "type": "Polygon",
@@ -43909,7 +43846,6 @@ const data = {
             "area_id": 266,
             "name": "Chickpet po",
             "pin_code": 560053,
-            "averageRent": 27
         },
         "geometry": {
             "type": "Polygon",
@@ -44153,7 +44089,6 @@ const data = {
             "area_id": 267,
             "name": "C V RAMAN NAGAR PO",
             "pin_code": 560093,
-            "averageRent": 64
         },
         "geometry": {
             "type": "Polygon",
@@ -44793,7 +44728,6 @@ const data = {
             "area_id": 268,
             "name": "NEW THIPPASANDRA",
             "pin_code": 560075,
-            "averageRent": 40
         },
         "geometry": {
             "type": "Polygon",
@@ -45365,7 +45299,6 @@ const data = {
             "area_id": 269,
             "name": "MAHADEVAPURAM PO",
             "pin_code": 560048,
-            "averageRent": 18
         },
         "geometry": {
             "type": "Polygon",
@@ -46061,7 +45994,6 @@ const data = {
             "area_id": 270,
             "name": "ARBIC COLLEGE POST OFFICE",
             "pin_code": 560045,
-            "averageRent": 29
         },
         "geometry": {
             "type": "Polygon",
@@ -46761,7 +46693,6 @@ const data = {
             "area_id": 271,
             "name": "viveknagar",
             "pin_code": 560047,
-            "averageRent": 74
         },
         "geometry": {
             "type": "Polygon",
@@ -47541,7 +47472,6 @@ const data = {
             "area_id": 272,
             "name": "BENSON TOWN SO",
             "pin_code": 560046,
-            "averageRent": 9
         },
         "geometry": {
             "type": "Polygon",
@@ -47825,7 +47755,6 @@ const data = {
             "area_id": 273,
             "name": "Bangalore City MDG (Good)",
             "pin_code": 560002,
-            "averageRent": 78
         },
         "geometry": {
             "type": "Polygon",
@@ -48257,7 +48186,6 @@ const data = {
             "area_id": 274,
             "name": "sahakara nagar post office",
             "pin_code": 560092,
-            "averageRent": 4
         },
         "geometry": {
             "type": "Polygon",
@@ -48665,7 +48593,6 @@ const data = {
             "area_id": 275,
             "name": "Basavanagudi HO",
             "pin_code": 560004,
-            "averageRent": 28
         },
         "geometry": {
             "type": "Polygon",
@@ -49321,7 +49248,6 @@ const data = {
             "area_id": 276,
             "name": "G K V K POST OFFICE",
             "pin_code": 560065,
-            "averageRent": 33
         },
         "geometry": {
             "type": "Polygon",
@@ -49489,7 +49415,6 @@ const data = {
             "area_id": 277,
             "name": "good jayanagar ho",
             "pin_code": 560041,
-            "averageRent": 74
         },
         "geometry": {
             "type": "Polygon",
@@ -49817,7 +49742,6 @@ const data = {
             "area_id": 278,
             "name": "SCIENCE INSTITUTE PO",
             "pin_code": 560012,
-            "averageRent": 12
         },
         "geometry": {
             "type": "Polygon",
@@ -50341,7 +50265,6 @@ const data = {
             "area_id": 279,
             "name": "H A FORM POST OFFICE",
             "pin_code": 560024,
-            "averageRent": 85
         },
         "geometry": {
             "type": "Polygon",
@@ -51077,7 +51000,6 @@ const data = {
             "area_id": 280,
             "name": "indiranagar",
             "pin_code": 560038,
-            "averageRent": 91
         },
         "geometry": {
             "type": "Polygon",
@@ -51721,7 +51643,6 @@ const data = {
             "area_id": 281,
             "name": "Kadugodi",
             "pin_code": 560067,
-            "averageRent": 65
         },
         "geometry": {
             "type": "Polygon",
@@ -52685,7 +52606,6 @@ const data = {
             "area_id": 282,
             "name": "Bangalore GPO",
             "pin_code": 560001,
-            "averageRent": 19
         },
         "geometry": {
             "type": "Polygon",
@@ -53965,7 +53885,6 @@ const data = {
             "area_id": 283,
             "name": "Sivan Chetty Gargens",
             "pin_code": 560042,
-            "averageRent": 68
         },
         "geometry": {
             "type": "Polygon",
@@ -54541,7 +54460,6 @@ const data = {
             "area_id": 284,
             "name": "VIDYARANYAPURA PO",
             "pin_code": 560097,
-            "averageRent": 33
         },
         "geometry": {
             "type": "Polygon",
@@ -56229,7 +56147,6 @@ const data = {
             "area_id": 285,
             "name": "marathahalli colony",
             "pin_code": 560037,
-            "averageRent": 83
         },
         "geometry": {
             "type": "Polygon",
@@ -56845,7 +56762,6 @@ const data = {
             "area_id": 286,
             "name": "BELLANDUR POST OFFICE",
             "pin_code": 560103,
-            "averageRent": 6
         },
         "geometry": {
             "type": "Polygon",
@@ -57277,7 +57193,6 @@ const data = {
             "area_id": 287,
             "name": "YELAHANKA POST OFFICE",
             "pin_code": 560064,
-            "averageRent": 91
         },
         "geometry": {
             "type": "Polygon",
@@ -57765,7 +57680,6 @@ const data = {
             "area_id": 288,
             "name": "St.Thomas Town S.O",
             "pin_code": 560084,
-            "averageRent": 18
         },
         "geometry": {
             "type": "Polygon",
@@ -58917,7 +58831,6 @@ const data = {
             "area_id": 289,
             "name": "maruthisevanagar",
             "pin_code": 560033,
-            "averageRent": 98
         },
         "geometry": {
             "type": "Polygon",
@@ -59685,7 +59598,6 @@ const data = {
             "area_id": 290,
             "name": "Bannerghatta PO",
             "pin_code": 560083,
-            "averageRent": 39
         },
         "geometry": {
             "type": "Polygon",
@@ -60061,7 +59973,6 @@ const data = {
             "area_id": 291,
             "name": "FRAZER TOWN",
             "pin_code": 560005,
-            "averageRent": 11
         },
         "geometry": {
             "type": "Polygon",
@@ -60953,7 +60864,6 @@ const data = {
             "area_id": 292,
             "name": "KALYAN NAGARA PO",
             "pin_code": 560043,
-            "averageRent": 74
         },
         "geometry": {
             "type": "Polygon",
@@ -61649,7 +61559,6 @@ const data = {
             "area_id": 293,
             "name": "D K Sandra PO",
             "pin_code": 560062,
-            "averageRent": 22
         },
         "geometry": {
             "type": "Polygon",
@@ -62369,7 +62278,6 @@ const data = {
             "area_id": 294,
             "name": "RVV PO",
             "pin_code": 560059,
-            "averageRent": 20
         },
         "geometry": {
             "type": "Polygon",
@@ -63101,7 +63009,6 @@ const data = {
             "area_id": 295,
             "name": "Jay nagar 3rd block",
             "pin_code": 560011,
-            "averageRent": 25
         },
         "geometry": {
             "type": "Polygon",
@@ -63621,7 +63528,6 @@ const data = {
             "area_id": 296,
             "name": "Bommanahalli PO",
             "pin_code": 560068,
-            "averageRent": 16
         },
         "geometry": {
             "type": "Polygon",
@@ -64593,7 +64499,6 @@ const data = {
             "area_id": 297,
             "name": "BSK II stage (good)",
             "pin_code": 560070,
-            "averageRent": 53
         },
         "geometry": {
             "type": "Polygon",
@@ -65381,7 +65286,6 @@ const data = {
             "area_id": 298,
             "name": "Bangalore Vishwavidyalaya",
             "pin_code": 560056,
-            "averageRent": 0
         },
         "geometry": {
             "type": "Polygon",
@@ -66677,7 +66581,6 @@ const data = {
             "area_id": 299,
             "name": "Kengeri po",
             "pin_code": 560060,
-            "averageRent": 79
         },
         "geometry": {
             "type": "Polygon",
@@ -67773,7 +67676,6 @@ const data = {
             "area_id": 300,
             "name": "Banashankari III stage PO",
             "pin_code": 560085,
-            "averageRent": 12
         },
         "geometry": {
             "type": "Polygon",
@@ -68693,7 +68595,6 @@ const data = {
             "area_id": 301,
             "name": "Nayandahalli",
             "pin_code": 560039,
-            "averageRent": 71
         },
         "geometry": {
             "type": "Polygon",
@@ -70181,7 +70082,6 @@ const data = {
             "area_id": 302,
             "name": "J P Nagar PO",
             "pin_code": 560078,
-            "averageRent": 62
         },
         "geometry": {
             "type": "Polygon",
@@ -71137,7 +71037,6 @@ const data = {
             "area_id": 303,
             "name": "subramanyapura",
             "pin_code": 560061,
-            "averageRent": 21
         },
         "geometry": {
             "type": "Polygon",

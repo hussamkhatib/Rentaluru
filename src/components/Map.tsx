@@ -1,10 +1,10 @@
 import mapboxgl from "mapbox-gl";
 import { useCallback, useState } from "react";
 import ReactMap, { Source, Layer, FullscreenControl } from "react-map-gl";
-import geojson from "../data";
 import layerStyle from "../layerStyles";
 import { useDispatch } from "react-redux";
 import { openLeftPanel } from "../redux/leftPanelSlice";
+import { useGetGeojsonQuery } from "../redux/filterAPI";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 
@@ -35,7 +35,7 @@ const Map = () => {
     <ReactMap
       {...viewState}
       onMove={(evt) => {
-        console.log(evt);
+        // console.log(evt);
         setViewState(evt.viewState);
       }}
       interactiveLayerIds={["data"]}
@@ -45,12 +45,23 @@ const Map = () => {
       onMouseMove={onHover}
       mapStyle="mapbox://styles/mapbox/dark-v10"
     >
-      {/* @ts-ignore TODO: //FIX THIS */}
-      <Source id="my-data" type="geojson" data={geojson}>
-        <Layer {...layerStyle} />
-      </Source>
+      <Polygons />
     </ReactMap>
   );
 };
 
 export default Map;
+
+const Polygons = () => {
+  const { data, isLoading } = useGetGeojsonQuery();
+  if (isLoading) return null;
+
+  return data?.data ? (
+    <>
+      {/* @ts-ignore TODO: //FIX THIS */}
+      <Source id="my-data" type="geojson" data={data.data}>
+        <Layer {...layerStyle} />
+      </Source>
+    </>
+  ) : null;
+};
