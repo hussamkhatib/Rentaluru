@@ -1,35 +1,8 @@
-/**
- * @LINK: https://docs.mapbox.com/mapbox-gl-js/example/timeline-animation/
- */
+import type { FillLayer } from "react-map-gl";
 
-// const layerStyle = {
-//   id: "area",
-//   type: "fill",
-//   paint: {
-//     "fill-color": [
-//       "interpolate",
-//       ["linear"],
-//       ["get", "value"],
-//       0,
-//       "#F2F12D",
-//       20,
-//       "#EED322",
-//       40,
-//       "#DA9C20",
-//       64,
-//       "#B86B25",
-//       76,
-//       "#8B4225",
-//       88,
-//       "#723122",
-//       100,
-//       "#fc3401",
-//     ],
-//   },
-// };
-
-const layerStyle = {
-  id: "area",
+const layerStyle: FillLayer = {
+  id: "data",
+  source: "my-data",
   type: "fill",
   paint: {
     "fill-outline-color": "rgb(52,51,50)",
