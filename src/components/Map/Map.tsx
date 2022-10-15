@@ -1,11 +1,11 @@
 import mapboxgl from "mapbox-gl";
 import { useCallback, useState } from "react";
 import ReactMap, { Source, Layer } from "react-map-gl";
-import layerStyle from "../layerStyles";
+import getLayerStyles from "./getLayerStyles";
 import { useDispatch } from "react-redux";
-import { openLeftPanel } from "../redux/leftPanelSlice";
-import { setActiveArea } from "../redux/activeAreaSlice";
-import { useGetGeojsonQuery } from "../redux/filterAPI";
+import { openLeftPanel } from "../../redux/leftPanelSlice";
+import { setActiveArea } from "../../redux/activeAreaSlice";
+import { useGetGeojsonQuery } from "../../redux/filterAPI";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 
@@ -43,10 +43,7 @@ const Map = () => {
   return (
     <ReactMap
       {...viewState}
-      onMove={(evt) => {
-        // console.log(evt);
-        setViewState(evt.viewState);
-      }}
+      onMove={(evt) => setViewState(evt.viewState)}
       interactiveLayerIds={["data"]}
       style={{ width: "100vw", height: "100vh" }}
       mapboxAccessToken={mapboxgl.accessToken}
@@ -65,11 +62,12 @@ export default Map;
 const Polygons = () => {
   const { data, isLoading, isError } = useGetGeojsonQuery();
   if (isLoading || isError) return null;
+  const laterStyles = getLayerStyles("avgRent", data.min, data.max);
   return data?.data ? (
     <>
       {/* @ts-ignore TODO: //FIX THIS */}
       <Source id="my-data" type="geojson" data={data.data}>
-        <Layer {...layerStyle} />
+        <Layer {...laterStyles} />
       </Source>
     </>
   ) : null;

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectToDatabase from "../../../lib/mongodb";
-import data from "../../data";
+import data from "../../components/Map/data";
 
 export default async function handler(
   req: NextApiRequest,
@@ -43,6 +43,8 @@ export default async function handler(
       area.properties["minRent"] = result[idx].minRent;
     });
 
-    return res.status(200).send({ data });
+    const max = Math.max(...result.map((r: any) => r.maxRent));
+    const min = Math.min(...result.map((r: any) => r.minRent));
+    return res.status(200).send({ data, max, min });
   }
 }

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectToDatabase from "../../../../lib/mongodb";
-import geojson from "../../../data";
+// import geojson from "../../../components/Map/data";
 
 export default async function handler(
   req: NextApiRequest,
