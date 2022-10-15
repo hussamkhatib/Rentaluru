@@ -31,9 +31,11 @@ const LeftPanel = () => {
           <XMarkIcon className="h-6 w-6 text-[#00FFA4]" aria-hidden />
         </button>
       </div>
-      <Tabs tabs={tabs}></Tabs>
-      <div className="border-t border-[#8BA7C1] opacity-20"></div>
-      <DetailsCard/>
+      <Tabs tabs={tabs}>
+        <DetailsCard />
+        <div>second tab</div>
+        <div>third tab</div>
+      </Tabs>
     </div>
   ) : null;
 };
