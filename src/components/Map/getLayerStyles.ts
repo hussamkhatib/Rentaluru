@@ -1,6 +1,6 @@
 import type { FillLayer } from "react-map-gl";
 
-export const linearHeatMapColors = [
+const linearHeatMapColors = [
   "#94f80b",
   "#93ff00",
   "#75e41c",
@@ -40,3 +40,15 @@ const getLayerStyles = (
 };
 
 export default getLayerStyles;
+
+// dynamic classes does not work with tailwind
+export const linearHeatMapColorsTailclasses = [
+  "bg-[#94f80b]",
+  "bg-[#93ff00]",
+  "bg-[#75e41c]",
+  "bg-[#54c527]",
+  "bg-[#40b02a]",
+  "bg-[#2c9b2a]",
+  "bg-[#198729]",
+  "bg-[#047326]",
+];
