@@ -34,7 +34,7 @@ const layerStyle = {
   paint: {
     "fill-outline-color": "rgb(52,51,50)",
     "fill-color": {
-      property: "value",
+      property: "averageRent",
       stops: [
         [30, "#94f80b"],
         [40, "#93ff00"],
