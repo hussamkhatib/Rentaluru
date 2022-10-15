@@ -53,9 +53,8 @@ const Map = () => {
 export default Map;
 
 const Polygons = () => {
-  const { data, isLoading } = useGetGeojsonQuery();
-  if (isLoading) return null;
-
+  const { data, isLoading, isError } = useGetGeojsonQuery();
+  if (isLoading || isError) return null;
   return data?.data ? (
     <>
       {/* @ts-ignore TODO: //FIX THIS */}
