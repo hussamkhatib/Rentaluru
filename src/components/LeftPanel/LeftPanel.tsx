@@ -32,7 +32,7 @@ const LeftPanel = () => {
         </button>
       </div>
       <Tabs tabs={tabs}></Tabs>
-      <div className="border-t border-[#8BA7C1]"></div>
+      <div className="border-t border-[#8BA7C1] opacity-20"></div>
       <DetailsCard/>
     </div>
   ) : null;
