@@ -1,6 +1,6 @@
 import mapboxgl from "mapbox-gl";
 import { useCallback, useState } from "react";
-import ReactMap, { Source, Layer, FullscreenControl } from "react-map-gl";
+import ReactMap, { Source, Layer, Popup } from "react-map-gl";
 import layerStyle from "../layerStyles";
 import { useDispatch } from "react-redux";
 import { openLeftPanel } from "../redux/leftPanelSlice";
@@ -17,18 +17,23 @@ const Map = () => {
     pitch: 45,
     bearing: 340,
   });
+  const [hoverInfo, setHoverInfo] = useState(null);
 
   const handleClick = (e: any) => {
     const { features } = e;
+
     if (features[0]) dispatch(openLeftPanel(true));
   };
 
   /* @ts-ignore TODO: //FIX THIS */
   const onHover = useCallback((event) => {
-    const { features } = event;
-    // console.log({ features });
-    const hoveredFeature = features && features[0];
-    // console.log(hoveredFeature);
+    const {
+      features,
+      point: { x, y },
+    } = event;
+    setHoverInfo({ x, y });
+    const hoveredFeature = features?.[0] && features[0].properties;
+    setHoverInfo(hoveredFeature && { property: hoveredFeature, x, y });
   }, []);
 
   return (
@@ -46,6 +51,7 @@ const Map = () => {
       mapStyle="mapbox://styles/mapbox/dark-v10"
     >
       <Polygons />
+      <ToolTip hoverInfo={hoverInfo} />
     </ReactMap>
   );
 };
@@ -63,4 +69,16 @@ const Polygons = () => {
       </Source>
     </>
   ) : null;
+};
+
+const ToolTip = ({ hoverInfo }: any) => {
+  if (!hoverInfo) return null;
+  return (
+    <div
+      className="fixed z-10 m-2 p-1 max-w-xs pointer-events-none"
+      style={{ left: hoverInfo.x, top: hoverInfo.y }}
+    >
+      <span>{hoverInfo?.property?.name}</span>
+    </div>
+  );
 };
