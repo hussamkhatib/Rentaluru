@@ -6,9 +6,9 @@ export const areaApi = createApi({
     baseUrl: "/api/",
   }),
   endpoints: (builder) => ({
-    getAreaDetails: builder.query<any, string>({
-      query: (area_id) => ({
-        url: `/area/${area_id}`,
+    getAreaDetails: builder.query<any, any>({
+      query: ({ area_id, queryParam }) => ({
+        url: queryParam ? `/area/${area_id}?${queryParam}` : `/area/${area_id}`,
       }),
     }),
   }),

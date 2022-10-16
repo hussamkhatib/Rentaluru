@@ -5,12 +5,15 @@ import {
 import React from "react";
 import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../redux/areaAPI";
+import { selectFilterQuery } from "../../redux/filterQuerySlice";
 
 const DetailsCard = () => {
+  const filterQuery = useSelector(selectFilterQuery);
   const activeArea = useSelector((state: any) => state.activeArea);
-  const { data, isLoading, isError } = useGetAreaDetailsQuery(
-    activeArea.area_id
-  );
+  const { data, isLoading, isError } = useGetAreaDetailsQuery({
+    area_id: activeArea.area_id,
+    queryParam: filterQuery,
+  });
   if (isLoading || isError) return <div>Loading ...</div>;
   const { avgRent, maxRent, minRent } = data[0];
 
