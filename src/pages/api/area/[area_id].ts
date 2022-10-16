@@ -29,6 +29,12 @@ export default async function handler(
             avgDeposit: {
               $avg: "$deposit",
             },
+            avgElectricity: {
+              $avg: "$electricity",
+            },
+            avgWater: {
+              $avg: "$water",
+            },
             maxRent: {
               $max: "$rent",
             },

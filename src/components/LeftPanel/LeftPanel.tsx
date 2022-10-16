@@ -4,7 +4,7 @@ import { XMarkIcon } from "@heroicons/react/20/solid";
 import { closeLeftPanel } from "../../redux/leftPanelSlice";
 import Details from "../Details";
 import ReviewCard from "../ReviewCard";
-import RatingsCard from "../RatingsCard";
+import Rating from "../Rating";
 import { removeActiveArea } from "../../redux/activeAreaSlice";
 
 const tabs = [
@@ -47,7 +47,7 @@ const LeftPanel = () => {
           <ReviewCard />
           <ReviewCard />
         </div>
-        <RatingsCard />
+        <Rating />
       </Tabs>
     </div>
   ) : null;
