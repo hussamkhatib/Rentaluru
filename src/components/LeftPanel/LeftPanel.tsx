@@ -2,7 +2,7 @@ import Tabs from "../Tabs";
 import { useDispatch, useSelector } from "react-redux";
 import { XMarkIcon } from "@heroicons/react/20/solid";
 import { closeLeftPanel } from "../../redux/leftPanelSlice";
-import DetailsCard from "../DetailsCard";
+import Details from "../Details";
 import ReviewCard from "../ReviewCard";
 import RatingsCard from "../RatingsCard";
 import { removeActiveArea } from "../../redux/activeAreaSlice";
@@ -40,7 +40,7 @@ const LeftPanel = () => {
         </button>
       </div>
       <Tabs tabs={tabs}>
-        <DetailsCard />
+        <Details />
         <div className="">
           <ReviewCard />
           <ReviewCard />

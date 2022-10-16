@@ -26,11 +26,20 @@ export default async function handler(
             avgRent: {
               $avg: "$rent",
             },
+            avgDeposit: {
+              $avg: "$deposit",
+            },
             maxRent: {
               $max: "$rent",
             },
+            maxDeposit: {
+              $max: "$deposit",
+            },
             minRent: {
               $min: "$rent",
+            },
+            minDeposit: {
+              $min: "$deposit",
             },
           },
         },

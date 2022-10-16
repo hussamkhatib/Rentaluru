@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../redux/areaAPI";
 import { selectFilterQuery } from "../../redux/filterQuerySlice";
 
-const DetailsCard = () => {
+const Details = () => {
   const filterQuery = useSelector(selectFilterQuery);
   const activeArea = useSelector((state: any) => state.activeArea);
   const { data, isLoading, isError } = useGetAreaDetailsQuery({
@@ -22,31 +22,56 @@ const DetailsCard = () => {
         filter if any.
       </div>
     );
-  const { avgRent, maxRent, minRent } = data[0];
+  const { avgRent, maxRent, minRent, avgDeposit, minDeposit, maxDeposit } =
+    data[0];
 
   return (
-    <div className="py-2 px-4">
+    <>
+      <DetailsCard title="Rent" avg={avgRent} min={minRent} max={maxRent} />
+      <DetailsCard
+        title="Deposit"
+        avg={avgDeposit}
+        min={minDeposit}
+        max={maxDeposit}
+      />
+    </>
+  );
+};
+export default Details;
+
+const DetailsCard = ({
+  title,
+  avg,
+  min,
+  max,
+}: {
+  title: string;
+  avg: number;
+  min: number;
+  max: number;
+}) => {
+  return (
+    <div className="py-3 px-4">
       <div className="bg-[#153757] rounded mt-2  px-2 py-1 text-white text-lg flex justify-between">
-        <span>Average rent</span>
-        <span className="text-[#00FFA4]">₹{Math.ceil(avgRent)}</span>
+        <span>Average {title}</span>
+        <span className="text-[#00FFA4]">₹{Math.ceil(avg)}</span>
       </div>
       <div>
         <div className="  mt-1  px-2 text-white text-lg flex justify-between">
           <span className="flex items-center">
-            <ArrowTrendingDownIcon className="text-green-700 h-6 px-1 " /> Min
-            Rent
+            <ArrowTrendingDownIcon className="text-green-700 h-6 px-1 " /> Min $
+            {title}
           </span>
-          <span className="">₹{minRent}</span>
+          <span className="">₹{min}</span>
         </div>
         <div className="  mt-1  px-2 text-white text-lg flex justify-between">
           <span className="flex items-center">
-            <ArrowTrendingUpIcon className="text-orange-700 h-6 px-1 " /> Max
-            rent
+            <ArrowTrendingUpIcon className="text-orange-700 h-6 px-1 " /> Max $
+            {title}
           </span>
-          <span className="">₹{maxRent}</span>
+          <span className="">₹{max}</span>
         </div>
       </div>
     </div>
   );
 };
-export default DetailsCard;
