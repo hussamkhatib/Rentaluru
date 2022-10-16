@@ -2,10 +2,11 @@ import mapboxgl from "mapbox-gl";
 import { useCallback, useState } from "react";
 import ReactMap, { Source, Layer } from "react-map-gl";
 import getLayerStyles from "./getLayerStyles";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { openLeftPanel } from "../../redux/leftPanelSlice";
 import { setActiveArea } from "../../redux/activeAreaSlice";
 import { useGetGeojsonQuery } from "../../redux/filterAPI";
+import { selectFilterQuery } from "../../redux/filterQuerySlice";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 
@@ -61,9 +62,11 @@ const Map = () => {
 export default Map;
 
 const Polygons = () => {
-  const { data, isLoading, isError } = useGetGeojsonQuery();
+  const filterQuery = useSelector(selectFilterQuery);
+  const { data, isLoading, isError } = useGetGeojsonQuery(filterQuery);
   if (isLoading || isError) return null;
   const laterStyles = getLayerStyles("avgRent", data.min, data.max);
+  console.log(data.min, data.max);
   return data?.data ? (
     <>
       {/* @ts-ignore TODO: //FIX THIS */}

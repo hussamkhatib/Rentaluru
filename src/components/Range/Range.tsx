@@ -4,9 +4,13 @@ import {
   linearHeatMapColorsTailclasses,
 } from "../Map/getLayerStyles";
 import classNames from "classnames";
+import { selectFilterQuery } from "../../redux/filterQuerySlice";
+import { useSelector } from "react-redux";
 
 const Range = () => {
-  const { data, isLoading, isError } = useGetGeojsonQuery();
+  const filterQuery = useSelector(selectFilterQuery);
+
+  const { data, isLoading, isError } = useGetGeojsonQuery(filterQuery);
   if (isLoading || isError) return null;
 
   const range = getStops(data.min, data.max);

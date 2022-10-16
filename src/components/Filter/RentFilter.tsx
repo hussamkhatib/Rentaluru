@@ -1,16 +1,20 @@
 import { useState, useRef } from "react";
-import { useDispatch } from "react-redux";
-import { setRent } from "../../redux/filterSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { selectRentFilter, setRent } from "../../redux/filterSlice";
 import Listbox from "../Listbox";
 import TextField from "../TextField";
 
 const RentFilter = () => {
+  const rentFilter = useSelector(selectRentFilter);
+
   const fromRef = useRef<any>(null);
   const toRef = useRef<any>(null);
   const inputRef = useRef<any>(null!);
 
   const dispatch = useDispatch();
-  const [selectedFilter, setSelectedFilter] = useState<string>();
+  const [selectedFilter, setSelectedFilter] = useState<string>(
+    rentFilter?.filter || null
+  );
 
   return (
     <div>
@@ -41,6 +45,7 @@ const RentFilter = () => {
                   })
                 )
               }
+              defaultValue={rentFilter?.value[0] || 0}
               min={0}
               step={1}
             />
@@ -55,6 +60,7 @@ const RentFilter = () => {
                   })
                 )
               }
+              defaultValue={rentFilter?.value[1] || 0}
               ref={toRef}
               min={0}
               step={1}
@@ -72,7 +78,7 @@ const RentFilter = () => {
                 })
               )
             }
-            defaultValue={0}
+            defaultValue={rentFilter?.value || 0}
           />
         ) : null}
       </div>

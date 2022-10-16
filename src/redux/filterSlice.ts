@@ -26,4 +26,5 @@ export const slice = createSlice({
 export const { setRent } = slice.actions;
 
 export const selectFilter = (state: any) => state.filter;
+export const selectRentFilter = (state: any) => state.filter.rent;
 export default slice.reducer;

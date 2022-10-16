@@ -4,8 +4,11 @@ import {
   selectFilterPanel,
   toggleFilterPanel,
 } from "../../redux/filterPanelSlice";
+import { setFilterQuery } from "../../redux/filterQuerySlice";
+import { selectFilter } from "../../redux/filterSlice";
 import Disclosure from "../Disclosure";
 import RentFilter from "./RentFilter";
+import transformInput from "./transformInput";
 
 const Filter = () => {
   return (
@@ -37,7 +40,15 @@ const ToggleFilter = () => {
 };
 
 const ApplyFilter = () => {
+  const dispatch = useDispatch();
   const filterPanel = useSelector(selectFilterPanel);
+  const filters = useSelector(selectFilter);
+
+  const applyFilters = () => {
+    const str = transformInput(filters);
+    console.log({ str });
+    dispatch(setFilterQuery(str));
+  };
 
   return filterPanel ? (
     <div className="fixed right-8 w-64 top-0 z-10 h-screen text-white bg-[#0D2337]">
@@ -48,7 +59,10 @@ const ApplyFilter = () => {
       <Disclosure title="Rating">the children</Disclosure>
       <Disclosure title="BHK">the children</Disclosure>
       <Disclosure title="Vehicle">the children</Disclosure>
-      <button className="bg-[#00FFA4] text-[#102B44] px-2 py-1 rounded w-full my-2 mx-4">
+      <button
+        onClick={applyFilters}
+        className="bg-[#00FFA4] text-[#102B44] px-2 py-1 rounded w-full my-2 mx-4"
+      >
         Apply Filter
       </button>
     </div>

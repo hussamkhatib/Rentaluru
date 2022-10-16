@@ -6,9 +6,9 @@ export const filterApi = createApi({
     baseUrl: "/api/",
   }),
   endpoints: (builder) => ({
-    getGeojson: builder.query<any, void>({
-      query: () => ({
-        url: "geojson",
+    getGeojson: builder.query<any, any>({
+      query: (queryParam) => ({
+        url: queryParam ? `geojson?${queryParam}` : "geojson",
       }),
     }),
   }),

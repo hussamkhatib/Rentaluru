@@ -14,7 +14,7 @@ const linearHeatMapColors = [
 export const getStops = (a: number, b: number): [number, string][] => {
   const diff = (b - a) / 8;
   return Array.from({ length: 8 }, (_, i) => [
-    diff * i,
+    a + diff * i,
     linearHeatMapColors[i],
   ]);
 };

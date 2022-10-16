@@ -7,6 +7,7 @@ import leftPanelReducer from "./leftPanelSlice";
 import activeAreaSlice from "./activeAreaSlice";
 import filterPanelSlice from "./filterPanelSlice";
 import filterSlice from "./filterSlice";
+import filterQuerySlice from "./filterQuerySlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     filter: filterSlice,
     leftPanel: leftPanelReducer,
     activeArea: activeAreaSlice,
+    filterQuery: filterQuerySlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
