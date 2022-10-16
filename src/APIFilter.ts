@@ -18,6 +18,30 @@ const APIFilter = (query: any) => {
       };
       // { rent: { '$gte': 42000, '$lte': 50000 } }
     }
+    if (split[1] === "exact") {
+      match = {
+        ...match,
+        [split[0]]: {
+          $eq: +query[key],
+        },
+      };
+    }
+    if (split[1] === "above") {
+      match = {
+        ...match,
+        [split[0]]: {
+          $gte: +query[key],
+        },
+      };
+    }
+    if (split[1] === "below") {
+      match = {
+        ...match,
+        [split[0]]: {
+          $lte: +query[key],
+        },
+      };
+    }
   }
   return { match };
 };

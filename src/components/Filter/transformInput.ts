@@ -15,6 +15,21 @@ const transformInput = (input: any) => {
           // rent-range=42000-50000
         }
       }
+      if (filter === "above") {
+        const rentStr = `rent-above=${value}`;
+        str = str.concat(rentStr);
+        //  rent-above=42000
+      }
+      if (filter === "below") {
+        const rentStr = `rent-below=${value}`;
+        str = str.concat(rentStr);
+        // rent-below=42000
+      }
+      if (filter === "exact") {
+        const rentStr = `rent-exact=${value}`;
+        str = str.concat(rentStr);
+        // rent-exact=42000
+      }
     }
   }
   return str;

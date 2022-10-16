@@ -46,7 +46,6 @@ const ApplyFilter = () => {
 
   const applyFilters = () => {
     const str = transformInput(filters);
-    console.log({ str });
     dispatch(setFilterQuery(str));
   };
 
