@@ -1,5 +1,4 @@
 const APIFilter = (query: any) => {
-  console.log(query);
   const keys = Object.keys(query);
 
   let match = {};

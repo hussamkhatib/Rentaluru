@@ -48,8 +48,6 @@ export default async function handler(
       // @ts-ignore
 
       if (result[idx]?._id === area.properties.area_id) {
-        console.log(result[idx]?._id, area.properties.area_id);
-
         // @ts-ignore
         area.properties["avgRent"] = result[idx].avgRent;
         // @ts-ignore

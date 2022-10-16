@@ -6,7 +6,6 @@ const transformInput = (input: any) => {
       const { filter, value } = rent;
       if (filter === "in range") {
         const [min, max] = value;
-        console.log(min, max);
 
         if (min && max && +min < +max) {
           const rentStr = `rent-range=${min}-${max}`;
@@ -28,6 +27,33 @@ const transformInput = (input: any) => {
         const rentStr = `rent-exact=${value}`;
         str = str.concat(rentStr);
         // rent-exact=42000
+      }
+    }
+  }
+
+  if (input.deposit) {
+    const { deposit } = input;
+    if (deposit.filter && deposit.value) {
+      const { filter, value } = deposit;
+      if (filter === "in range") {
+        const [min, max] = value;
+
+        if (min && max && +min < +max) {
+          const rentStr = `deposit-range=${min}-${max}`;
+          str = str.concat(rentStr);
+        }
+      }
+      if (filter === "above") {
+        const rentStr = `deposit-above=${value}`;
+        str = str.concat(rentStr);
+      }
+      if (filter === "below") {
+        const rentStr = `deposit-below=${value}`;
+        str = str.concat(rentStr);
+      }
+      if (filter === "exact") {
+        const rentStr = `deposit-exact=${value}`;
+        str = str.concat(rentStr);
       }
     }
   }

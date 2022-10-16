@@ -7,6 +7,7 @@ import {
 import { setFilterQuery } from "../../redux/filterQuerySlice";
 import { selectFilter } from "../../redux/filterSlice";
 import Disclosure from "../Disclosure";
+import DepositFilter from "./DepositFilter";
 // import RatingFilter from "./RatingFilter";
 import RentFilter from "./RentFilter";
 import transformInput from "./transformInput";
@@ -56,6 +57,9 @@ const ApplyFilter = () => {
       <div className="mt-6" />
       <Disclosure title="Rent">
         <RentFilter />
+      </Disclosure>
+      <Disclosure title="Deposit">
+        <DepositFilter />
       </Disclosure>
       {/* <Disclosure title="Rating">
         <RatingFilter />
