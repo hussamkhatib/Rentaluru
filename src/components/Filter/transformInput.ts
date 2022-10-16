@@ -40,20 +40,20 @@ const transformInput = (input: any) => {
 
         if (min && max && +min < +max) {
           const rentStr = `deposit-range=${min}-${max}`;
-          str = str.concat(rentStr);
+          str = !str ? str.concat(rentStr) : str.concat(`&${rentStr}`);
         }
       }
       if (filter === "above") {
         const rentStr = `deposit-above=${value}`;
-        str = str.concat(rentStr);
+        str = !str ? str.concat(rentStr) : str.concat(`&${rentStr}`);
       }
       if (filter === "below") {
         const rentStr = `deposit-below=${value}`;
-        str = str.concat(rentStr);
+        str = !str ? str.concat(rentStr) : str.concat(`&${rentStr}`);
       }
       if (filter === "exact") {
         const rentStr = `deposit-exact=${value}`;
-        str = str.concat(rentStr);
+        str = !str ? str.concat(rentStr) : str.concat(`&${rentStr}`);
       }
     }
   }

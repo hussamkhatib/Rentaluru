@@ -1,4 +1,9 @@
-import { BoltIcon, CloudIcon, StarIcon } from "@heroicons/react/20/solid";
+import {
+  BoltIcon,
+  CloudIcon,
+  MapIcon,
+  StarIcon,
+} from "@heroicons/react/20/solid";
 import { StarIcon as OutlineStarIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -20,7 +25,7 @@ const Rating = () => {
         filter if any.
       </div>
     );
-  const { avgElectricity, avgWater } = data[0];
+  const { avgElectricity, avgWater, avgTransportation } = data[0];
 
   return (
     <div className="p-2">
@@ -34,6 +39,11 @@ const Rating = () => {
           title="Water"
           icon={<CloudIcon className="h-6 w-6 text-[#00FFA4]" aria-hidden />}
           stars={Math.ceil(avgWater)}
+        />
+        <RatingCard
+          title="Transport"
+          icon={<MapIcon className="h-6 w-6 text-[#00FFA4]" aria-hidden />}
+          stars={Math.ceil(avgTransportation)}
         />
       </div>
     </div>

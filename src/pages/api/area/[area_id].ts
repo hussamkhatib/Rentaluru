@@ -38,6 +38,9 @@ export default async function handler(
             avgWater: {
               $avg: "$water",
             },
+            avgTransportation: {
+              $avg: "$transportation",
+            },
             maxRent: {
               $max: "$rent",
             },
