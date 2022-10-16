@@ -62,7 +62,7 @@ const ApplyFilter = () => {
         onClick={applyFilters}
         className="bg-[#00FFA4] text-[#102B44] px-2 py-1 rounded w-full my-2 mx-4"
       >
-        Apply Filter
+        Apply Filters
       </button>
     </div>
   ) : null;

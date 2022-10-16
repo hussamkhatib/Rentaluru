@@ -1,4 +1,5 @@
 import { BoltIcon, CloudIcon, StarIcon } from "@heroicons/react/20/solid";
+import { StarIcon as OutlineStarIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../redux/areaAPI";
@@ -53,9 +54,13 @@ const RatingCard = ({ icon, title, stars }: any) => {
             <span className="text-sm">{title}</span>
 
             <div className="flex items-center">
-              {Array.from({ length: stars }, (_, i) => (
-                <StarIcon className="h-4 w-4 text-[#00FFA4]" key={i} />
-              ))}
+              {Array.from({ length: 5 }, (_, i) => {
+                return stars > i ? (
+                  <StarIcon className="h-4 w-4 text-[#00FFA4]" key={i} />
+                ) : (
+                  <OutlineStarIcon className="h-4 w-4 text-[#00FFA4]" key={i} />
+                );
+              })}
             </div>
           </div>
         </div>
