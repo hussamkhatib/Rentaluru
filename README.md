@@ -16,3 +16,12 @@ Team Incredible presents a data visualization website application that allows us
 - Redux
 - Tailwind CSS
 - TypeScript
+
+## Running locally
+
+- `git clone https://github.com/hussamkhatib/Rentaluru.git`
+- `cd Rentaluru`
+- `yarn`
+- `cp .env.example .env`
+- fill the env variable with your credentials
+- `yarn dev`
