@@ -14,7 +14,8 @@ const Details = () => {
     area_id: activeArea.area_id,
     queryParam: filterQuery,
   });
-  if (isLoading || isError) return <div>Loading ...</div>;
+  if (isLoading) return <div className="text-white">Loading ...</div>;
+  if (isError) return <div className="text-white">Somthing went wrong</div>;
   if (!data[0])
     return (
       <div className="text-white">
