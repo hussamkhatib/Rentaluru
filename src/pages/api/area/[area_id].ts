@@ -18,7 +18,10 @@ export default async function handler(
       .collection("reviews")
       .aggregate([
         {
-          $match: { ...match, area_id: Number(area_id) },
+          $match: {
+            ...match,
+            area_id: Number(area_id),
+          },
         },
         {
           $group: {

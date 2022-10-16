@@ -11,7 +11,6 @@ const transformInput = (input: any) => {
         if (min && max && +min < +max) {
           const rentStr = `rent-range=${min}-${max}`;
           str = str.concat(rentStr);
-
           // rent-range=42000-50000
         }
       }
@@ -30,6 +29,17 @@ const transformInput = (input: any) => {
         str = str.concat(rentStr);
         // rent-exact=42000
       }
+    }
+  }
+  if (input.vehicle) {
+    const { vehicle } = input;
+    if (vehicle["twoW"] === true) {
+      const twoWStr = `twoW=true`;
+      str = !str ? str.concat(twoWStr) : str.concat(`&${twoWStr}`);
+    }
+    if (vehicle["fourW"] === true) {
+      const fourWStr = `fourW=true`;
+      str = !str ? str.concat(fourWStr) : str.concat(`&${fourWStr}`);
     }
   }
   return str;

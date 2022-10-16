@@ -7,8 +7,10 @@ import {
 import { setFilterQuery } from "../../redux/filterQuerySlice";
 import { selectFilter } from "../../redux/filterSlice";
 import Disclosure from "../Disclosure";
+// import RatingFilter from "./RatingFilter";
 import RentFilter from "./RentFilter";
 import transformInput from "./transformInput";
+import VehicleFilter from "./VehicleFilter";
 
 const Filter = () => {
   return (
@@ -55,9 +57,13 @@ const ApplyFilter = () => {
       <Disclosure title="Rent">
         <RentFilter />
       </Disclosure>
-      <Disclosure title="Rating">the children</Disclosure>
-      <Disclosure title="BHK">the children</Disclosure>
-      <Disclosure title="Vehicle">the children</Disclosure>
+      {/* <Disclosure title="Rating">
+        <RatingFilter />
+      </Disclosure> */}
+      {/* <Disclosure title="BHK">the children</Disclosure> */}
+      <Disclosure title="Vehicle">
+        <VehicleFilter />
+      </Disclosure>
       <button
         onClick={applyFilters}
         className="bg-[#00FFA4] text-[#102B44] px-2 py-1 rounded w-full my-2 mx-4"
