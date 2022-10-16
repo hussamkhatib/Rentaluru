@@ -9,6 +9,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../redux/areaAPI";
 import { selectFilterQuery } from "../../redux/filterQuerySlice";
+import Loader from "../Loader";
 
 const Rating = () => {
   const filterQuery = useSelector(selectFilterQuery);
@@ -17,7 +18,7 @@ const Rating = () => {
     area_id: activeArea.area_id,
     queryParam: filterQuery,
   });
-  if (isLoading || isError) return <div>Loading ...</div>;
+  if (isLoading || isError) return <Loader />;
   if (!data[0])
     return (
       <div className="text-white">
