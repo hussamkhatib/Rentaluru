@@ -15,14 +15,15 @@ const Range = () => {
 
   const range = getStops(data.min, data.max);
   return (
-    <div className="fixed z-20 bottom-8 right-2 text-[#a8a8a8]">
+    <div className="fixed z-20 bottom-8 right-8 text-[#a8a8a8]">
       {range.map((stop, idx) => (
         <div key={idx} className="flex gap-x-1 h-6">
           <div
             className={classNames("w-4", linearHeatMapColorsTailclasses[idx])}
           />
           <span>
-            {Math.ceil(stop[0])} {range.length - 1 === idx ? "+" : null}
+            {kFormatter(Math.ceil(stop[0]))}{" "}
+            {range.length - 1 === idx ? "+" : null}
           </span>
         </div>
       ))}
@@ -31,3 +32,10 @@ const Range = () => {
 };
 
 export default Range;
+
+function kFormatter(num: any) {
+  return Math.abs(num) > 999
+    ? // @ts-ignore
+      Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
+    : Math.sign(num) * Math.abs(num);
+}
