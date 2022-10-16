@@ -59,14 +59,14 @@ const DetailsCard = ({
       <div>
         <div className="  mt-1  px-2 text-white text-lg flex justify-between">
           <span className="flex items-center">
-            <ArrowTrendingDownIcon className="text-green-700 h-6 px-1 " /> Min $
+            <ArrowTrendingDownIcon className="text-[#00FFA4] h-6 px-1 " /> Min $
             {title}
           </span>
           <span className="">₹{min}</span>
         </div>
         <div className="  mt-1  px-2 text-white text-lg flex justify-between">
           <span className="flex items-center">
-            <ArrowTrendingUpIcon className="text-orange-700 h-6 px-1 " /> Max $
+            <ArrowTrendingUpIcon className="text-red-500 h-6 px-1 " /> Max $
             {title}
           </span>
           <span className="">₹{max}</span>
