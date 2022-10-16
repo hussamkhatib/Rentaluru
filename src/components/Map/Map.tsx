@@ -66,7 +66,6 @@ const Polygons = () => {
   const { data, isLoading, isError } = useGetGeojsonQuery(filterQuery);
   if (isLoading || isError) return null;
   const laterStyles = getLayerStyles("avgRent", data.min, data.max);
-  console.log(data.min, data.max);
   return data?.data ? (
     <>
       {/* @ts-ignore TODO: //FIX THIS */}
@@ -81,7 +80,7 @@ const ToolTip = ({ hoverInfo }: any) => {
   if (!hoverInfo) return null;
   return (
     <div
-      className="fixed z-10 m-2 p-1 max-w-xs pointer-events-none"
+      className="fixed z-10 m-2 p-1 max-w-xs pointer-events-none bg-white rounded-xl px-3"
       style={{ left: hoverInfo.x, top: hoverInfo.y }}
     >
       <span>{hoverInfo?.property?.name}</span>

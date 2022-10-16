@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectToDatabase from "../../../../lib/mongodb";
+import APIFilter from "../../../APIFilter";
 // import geojson from "../../../components/Map/data";
 
 export default async function handler(
@@ -11,24 +12,7 @@ export default async function handler(
 
   const { method, query } = req;
   if (method === "GET") {
-    const keys = Object.keys(query);
-    let match = {};
-    for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      const split = key.split("-");
-      if (split[1] === "range") {
-        // @ts-ignore
-        const [min, max] = query[key].split("-");
-        match = {
-          ...match,
-          [split[0]]: {
-            $gte: +min,
-            $lte: +max,
-          },
-        };
-        // { rent: { '$gte': 42000, '$lte': 50000 } }
-      }
-    }
+    const { match } = APIFilter(query);
 
     const data = await db
       .collection("reviews")

@@ -15,6 +15,13 @@ const DetailsCard = () => {
     queryParam: filterQuery,
   });
   if (isLoading || isError) return <div>Loading ...</div>;
+  if (!data[0])
+    return (
+      <div className="text-white">
+        Noone has submitted their room details in this area at the specified
+        filter if any.
+      </div>
+    );
   const { avgRent, maxRent, minRent } = data[0];
 
   return (
