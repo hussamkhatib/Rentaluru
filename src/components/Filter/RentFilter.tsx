@@ -16,7 +16,14 @@ const RentFilter = () => {
     <div>
       <Listbox
         selected={selectedFilter}
-        setSelected={setSelectedFilter}
+        setSelected={(value) => {
+          setSelectedFilter(value as string);
+          dispatch(
+            setRent({
+              filter: value as string,
+            })
+          );
+        }}
         list={["in range", "above", "below", "exact"]}
       />
       <div className="mt-2">

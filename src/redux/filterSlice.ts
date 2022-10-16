@@ -9,7 +9,16 @@ export const slice = createSlice({
   initialState,
   reducers: {
     setRent: (state, action) => {
-      state.rent = action.payload;
+      if (!action.payload.value)
+        state.rent = {
+          filter: action.payload.filter,
+          // @ts-ignore
+          value: { ...state.rent.value },
+        };
+      else state.rent = action.payload;
+    },
+    resetFilters: () => {
+      return initialState;
     },
   },
 });
