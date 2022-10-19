@@ -1,4 +1,4 @@
-import mapboxgl from "mapbox-gl";
+import mapboxgl, { MapLayerMouseEvent } from "mapbox-gl";
 import { useCallback, useState } from "react";
 import ReactMap, { Source, Layer } from "react-map-gl";
 import getLayerStyles from "./getLayerStyles";
@@ -22,22 +22,20 @@ const Map = () => {
 
   const [hoverInfo, setHoverInfo] = useState<any>(null);
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: MapLayerMouseEvent) => {
     const { features } = e;
 
-    if (features[0]) {
+    if (features?.[0]) {
       dispatch(setActiveArea(features[0].properties));
       dispatch(openLeftPanel());
     }
   };
 
-  /* @ts-ignore TODO: //FIX THIS */
-  const onHover = useCallback((event) => {
+  const onHover = useCallback((event: MapLayerMouseEvent) => {
     const {
       features,
       point: { x, y },
     } = event;
-    setHoverInfo({ x, y });
     const hoveredFeature = features?.[0] && features[0].properties;
     setHoverInfo(hoveredFeature && { property: hoveredFeature, x, y });
   }, []);
