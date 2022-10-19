@@ -15,11 +15,7 @@ const MyListBox: FC<Props> = ({ list, selected, setSelected }) => {
         <Listbox.Button className="relative w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md cursor-default h-9 focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
           <span className="block truncate">
             {Array.isArray(selected)
-              ? selected
-                  .map((value) =>
-                    typeof value === "object" ? value?.name : value
-                  )
-                  .join(", ")
+              ? selected.map((value) => value).join(", ")
               : selected}
           </span>
           <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
