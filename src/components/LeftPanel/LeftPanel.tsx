@@ -5,7 +5,10 @@ import { closeLeftPanel } from "../../redux/leftPanelSlice";
 import Details from "../Details";
 import ReviewCard from "../ReviewCard";
 import Rating from "../Rating";
-import { removeActiveArea } from "../../redux/activeAreaSlice";
+import {
+  removeActiveArea,
+  selectActiveArea,
+} from "../../redux/activeAreaSlice";
 
 const tabs = [
   {
@@ -21,7 +24,7 @@ const tabs = [
 
 const LeftPanel = () => {
   const dispatch = useDispatch();
-  const activeArea = useSelector((state: any) => state.activeArea);
+  const activeArea = useSelector(selectActiveArea);
   const leftPanelOpen = useSelector((state: any) => state.leftPanel);
 
   return leftPanelOpen ? (

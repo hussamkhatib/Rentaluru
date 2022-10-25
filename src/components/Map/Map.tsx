@@ -1,10 +1,10 @@
 import mapboxgl, { MapLayerMouseEvent } from "mapbox-gl";
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import ReactMap, { Source, Layer } from "react-map-gl";
-import getLayerStyles from "./getLayerStyles";
+import { getLayerStyles, highlightedLayerStyles } from "./getLayerStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { openLeftPanel } from "../../redux/leftPanelSlice";
-import { setActiveArea } from "../../redux/activeAreaSlice";
+import { selectActiveAreaId, setActiveArea } from "../../redux/activeAreaSlice";
 import { useGetGeojsonQuery } from "../../redux/filterAPI";
 import { selectFilterQuery } from "../../redux/filterQuerySlice";
 
@@ -61,14 +61,24 @@ export default Map;
 
 const Polygons = () => {
   const filterQuery = useSelector(selectFilterQuery);
+  const activeAreaId = useSelector(selectActiveAreaId);
+
+  const filterLayer = useMemo(
+    () => ["in", "area_id", activeAreaId],
+    [activeAreaId]
+  );
+
   const { data, isLoading, isError } = useGetGeojsonQuery(filterQuery);
   if (isLoading || isError) return null;
   const laterStyles = getLayerStyles("avgRent", data.min, data.max);
+
   return data?.data ? (
     <>
-      {/* @ts-ignore TODO: //FIX THIS */}
       <Source id="my-data" type="geojson" data={data.data}>
         <Layer {...laterStyles} />
+        {activeAreaId && (
+          <Layer {...highlightedLayerStyles} filter={filterLayer} />
+        )}
       </Source>
     </>
   ) : null;
