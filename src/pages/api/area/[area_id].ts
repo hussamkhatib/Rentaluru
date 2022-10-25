@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import connectToDatabase from "../../../../lib/mongodb";
+import connectToDatabase from "../../../lib/mongodb";
 import APIFilter from "../../../APIFilter";
 // import geojson from "../../../components/Map/data";
 
