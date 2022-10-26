@@ -45,16 +45,10 @@ export default async function handler(
 
     let idx = 0;
     data["features"].forEach((area) => {
-      // @ts-ignore
-
       if (result[idx]?._id === area.properties.area_id) {
-        // @ts-ignore
         area.properties["avgRent"] = result[idx].avgRent;
-        // @ts-ignore
         area.properties["maxRent"] = result[idx].maxRent;
-        // @ts-ignore
         area.properties["minRent"] = result[idx].minRent;
-        // @ts-ignore
         area.properties["count"] = result[idx].count;
         idx++;
       }
