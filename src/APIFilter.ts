@@ -9,7 +9,6 @@ const APIFilter = (query: any) => {
 
     if (split.length === 2) {
       if (split[1] === "range") {
-        // @ts-ignore
         const [min, max] = query[key].split("-");
         match = {
           ...match,

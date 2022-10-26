@@ -1,6 +1,4 @@
-type Props = {};
-
-const RatingFilter = (props: Props) => {
+const RatingFilter = () => {
   return <div>RatingFilter</div>;
 };
 

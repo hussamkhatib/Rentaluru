@@ -33,9 +33,6 @@ const Range = () => {
 
 export default Range;
 
-function kFormatter(num: any) {
-  return Math.abs(num) > 999
-    ? // @ts-ignore
-      Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + "k"
-    : Math.sign(num) * Math.abs(num);
+function kFormatter(num: number) {
+  return Math.abs(num) > 999 ? Math.abs(num / 1000).toFixed(1) + "k" : num;
 }
