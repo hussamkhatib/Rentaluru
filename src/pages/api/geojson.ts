@@ -55,7 +55,7 @@ export default async function handler(
     });
 
     const max = Math.max(...result.map((r: any) => r.avgRent));
-    const min = Math.min(...result.map((r: any) => r.minRent));
+    const min = Math.min(...result.map((r: any) => r.avgRent));
     return res.status(200).send({ data, min, max });
   }
 }
