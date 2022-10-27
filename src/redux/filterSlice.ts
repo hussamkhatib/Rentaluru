@@ -1,6 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
+interface Filter {
+  filter?: string;
+  value?: string | string[];
+}
+
+interface State {
+  deposit: Filter;
+  rent: Filter;
+  vehicle: Filter;
+}
+
+const initialState: State = {
   rent: {},
   deposit: {},
   vehicle: {},
@@ -17,8 +28,10 @@ export const slice = createSlice({
       if (!action.payload.value)
         state.rent = {
           filter: action.payload.filter,
-          // @ts-ignore
-          value: { ...state.rent.value },
+          value:
+            typeof state.rent.value === "object"
+              ? { ...state.rent.value }
+              : state.rent.value,
         };
       else state.rent = action.payload;
     },
@@ -26,8 +39,10 @@ export const slice = createSlice({
       if (!action.payload.value)
         state.deposit = {
           filter: action.payload.filter,
-          // @ts-ignore
-          value: { ...state.deposit.value },
+          value:
+            typeof state.deposit.value === "object"
+              ? [...state.deposit.value]
+              : state.deposit.value,
         };
       else state.deposit = action.payload;
     },
