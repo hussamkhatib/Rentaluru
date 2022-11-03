@@ -2,7 +2,7 @@ import { useGetGeojsonQuery } from "../../redux/filterAPI";
 import {
   getStops,
   linearHeatMapColorsTailclasses,
-} from "../Map/getLayerStyles";
+} from "../Map/Polygons/polygons.utils";
 import classNames from "classnames";
 import { selectFilterQuery } from "../../redux/filterQuerySlice";
 import { useSelector } from "react-redux";

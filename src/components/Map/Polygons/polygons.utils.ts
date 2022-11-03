@@ -19,13 +19,14 @@ export const getStops = (a: number, b: number): [number, string][] => {
   ]);
 };
 
-// property -> values on the geojson
 export const getLayerStyles = (
+  activeAreaId: number,
   property: string,
   min: number,
   max: number
-): FillLayer => {
-  return {
+) => {
+  const stops = getStops(min, max);
+  const layer: FillLayer = {
     id: "data",
     source: "my-data",
     type: "fill",
@@ -33,21 +34,23 @@ export const getLayerStyles = (
       "fill-outline-color": "rgb(52,51,50)",
       "fill-color": {
         property,
-        stops: getStops(min, max),
+        stops,
       },
     },
   };
-};
 
-export const highlightedLayerStyles: FillLayer = {
-  id: "data-highlighted",
-  source: "my-data",
-  type: "fill",
-
-  paint: {
-    "fill-opacity": 0.75,
-    "fill-color": "red",
-  },
+  const highlightedLayer: FillLayer = {
+    id: "data-highlighted",
+    source: "my-data",
+    type: "fill",
+    paint: {
+      "fill-opacity": 0.75,
+      "fill-color": "red",
+    },
+    // TODO: check if need to memoize this
+    filter: ["==", "area_id", activeAreaId],
+  };
+  return { layer, highlightedLayer };
 };
 
 export default getLayerStyles;
