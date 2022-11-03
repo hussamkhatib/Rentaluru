@@ -3,7 +3,6 @@ import { useCallback, useMemo, useState } from "react";
 import ReactMap, { Source, Layer } from "react-map-gl";
 import { getLayerStyles, highlightedLayerStyles } from "./getLayerStyles";
 import { useDispatch, useSelector } from "react-redux";
-import { openLeftPanel, closeLeftPanel } from "../../redux/leftPanelSlice";
 import {
   selectActiveAreaId,
   removeActiveArea,
@@ -29,13 +28,9 @@ const Map = () => {
   const handleClick = (e: MapLayerMouseEvent) => {
     const { features } = e;
 
-    if (features?.[0]) {
-      dispatch(setActiveArea(features[0].properties));
-      dispatch(openLeftPanel());
-    } else {
-      dispatch(closeLeftPanel());
-      dispatch(removeActiveArea());
-    }
+    features?.[0]
+      ? dispatch(setActiveArea(features[0].properties))
+      : dispatch(removeActiveArea());
   };
 
   const onHover = useCallback((event: MapLayerMouseEvent) => {

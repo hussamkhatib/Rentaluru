@@ -1,21 +1,17 @@
 import Tabs from "../Tabs";
 import { useDispatch, useSelector } from "react-redux";
 import { XMarkIcon } from "@heroicons/react/20/solid";
-import { closeLeftPanel } from "../../redux/leftPanelSlice";
 import Details from "../Details";
-import ReviewCard from "../ReviewCard";
 import Rating from "../Rating";
 import {
   removeActiveArea,
   selectActiveArea,
+  selectIsAreaActive,
 } from "../../redux/activeAreaSlice";
 
 const tabs = [
   {
     name: "Details",
-  },
-  {
-    name: "Reviews",
   },
   {
     name: "Ratings",
@@ -25,7 +21,7 @@ const tabs = [
 const LeftPanel = () => {
   const dispatch = useDispatch();
   const activeArea = useSelector(selectActiveArea);
-  const leftPanelOpen = useSelector((state: any) => state.leftPanel);
+  const leftPanelOpen = useSelector(selectIsAreaActive);
 
   return leftPanelOpen ? (
     <div className="fixed z-10 h-3/4 bg-[#0D2337] w-[25rem] p-4 m-5 rounded-2xl overflow-auto overflow-y-scroll scrollbar-thin scrollbar-thumb-[#102B44] scrollbar-track-blue-300 ">
@@ -34,7 +30,6 @@ const LeftPanel = () => {
         <button
           aria-label="close button"
           onClick={() => {
-            dispatch(closeLeftPanel());
             dispatch(removeActiveArea());
           }}
           className="bg-[#153757] rounded-full"
@@ -44,12 +39,6 @@ const LeftPanel = () => {
       </div>
       <Tabs tabs={tabs}>
         <Details />
-        <div className="">
-          <ReviewCard />
-          <ReviewCard />
-          <ReviewCard />
-          <ReviewCard />
-        </div>
         <Rating />
       </Tabs>
     </div>
