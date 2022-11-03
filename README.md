@@ -1,4 +1,4 @@
-# Team Incredible
+# Rentaluru
 
 ![indiranagar](https://user-images.githubusercontent.com/52914487/196019533-ae757e23-3a47-4413-b2f0-f1ed1d11b6df.png)
 
@@ -25,3 +25,5 @@ Team Incredible presents a data visualization website application that allows us
 - `cp .env.example .env`
 - fill the env variable with your credentials
 - `yarn dev`
+
+## Contributing
