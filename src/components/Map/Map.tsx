@@ -1,8 +1,12 @@
 import mapboxgl, { MapLayerMouseEvent } from "mapbox-gl";
 import { useCallback, useState } from "react";
 import ReactMap from "react-map-gl";
-import { useDispatch } from "react-redux";
-import { removeActiveArea, setActiveArea } from "../../redux/activeAreaSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  removeActiveArea,
+  setActiveArea,
+  selectIsAreaActive,
+} from "../../redux/activeAreaSlice";
 import Polygons from "./Polygons";
 import ToolTip from "./Tooltip";
 
@@ -10,6 +14,7 @@ mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 
 const Map = () => {
   const dispatch = useDispatch();
+  const isAreaActive = useSelector(selectIsAreaActive);
   const [viewState, setViewState] = useState({
     longitude: 77.57,
     latitude: 12.89,
@@ -41,7 +46,9 @@ const Map = () => {
     <ReactMap
       {...viewState}
       onMove={(evt) => setViewState(evt.viewState)}
-      interactiveLayerIds={["data"]}
+      interactiveLayerIds={
+        isAreaActive ? ["data", "data-highlighted"] : ["data"]
+      }
       style={{ width: "100vw", height: "100vh" }}
       mapboxAccessToken={mapboxgl.accessToken}
       onClick={handleClick}

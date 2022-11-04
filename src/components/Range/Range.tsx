@@ -1,6 +1,7 @@
 import { useGetGeojsonQuery } from "../../redux/filterAPI";
 import {
   getStops,
+  linearHeatMapColors,
   linearHeatMapColorsTailclasses,
 } from "../Map/Polygons/polygons.utils";
 import classNames from "classnames";
@@ -13,7 +14,7 @@ const Range = () => {
   const { data, isLoading, isError } = useGetGeojsonQuery(filterQuery);
   if (isLoading || isError) return null;
 
-  const range = getStops(data.min, data.max);
+  const range = getStops(data.min, data.max)(linearHeatMapColors);
   return (
     <div className="fixed z-20 bottom-8 right-8 text-[#a8a8a8]">
       {range.map((stop, idx) => (

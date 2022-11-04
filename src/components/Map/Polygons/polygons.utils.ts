@@ -1,22 +1,23 @@
 import type { FillLayer } from "react-map-gl";
 
-const linearHeatMapColors = [
-  "#94f80b",
-  "#93ff00",
-  "#75e41c",
-  "#54c527",
-  "#40b02a",
-  "#2c9b2a",
-  "#198729",
-  "#047326",
+export const linearHeatMapColors = [
+  "#fff33b",
+  "#fdc70c",
+  "#f3903f",
+  "#ed683c",
+  "#e93e3a",
 ];
 
-export const getStops = (a: number, b: number): [number, string][] => {
-  const diff = (b - a) / 8;
-  return Array.from({ length: 8 }, (_, i) => [
-    a + diff * i,
-    linearHeatMapColors[i],
-  ]);
+// export const linearHeatMapLightColors = [
+//   "#fff11f",
+//   "#fff9db",
+//   "#ffefdd",
+//   "#ffeae1",
+//   "#ffe5e4",
+// ];
+export const getStops = (a: number, b: number) => (colors: any) => {
+  const step = (b - a) / 5;
+  return colors.map((color: any, i: number) => [a + step * i, color]);
 };
 
 export const getLayerStyles = (
@@ -25,7 +26,9 @@ export const getLayerStyles = (
   min: number,
   max: number
 ) => {
-  const stops = getStops(min, max);
+  const lightStops = getStops(min, max)(linearHeatMapColors);
+  const darkStops = getStops(min, max)(linearHeatMapColors);
+
   const layer: FillLayer = {
     id: "data",
     source: "my-data",
@@ -34,9 +37,10 @@ export const getLayerStyles = (
       "fill-outline-color": "rgb(52,51,50)",
       "fill-color": {
         property,
-        stops,
+        stops: lightStops,
       },
     },
+    ...(activeAreaId && { filter: ["!=", "area_id", activeAreaId] }),
   };
 
   const highlightedLayer: FillLayer = {
@@ -44,12 +48,16 @@ export const getLayerStyles = (
     source: "my-data",
     type: "fill",
     paint: {
-      "fill-opacity": 0.75,
-      "fill-color": "red",
+      "fill-opacity": 0.25,
+      "fill-antialias": true,
+      "fill-color": {
+        property,
+        stops: darkStops,
+      },
     },
-    // TODO: check if need to memoize this
-    filter: ["==", "area_id", activeAreaId],
+    ...(activeAreaId && { filter: ["==", "area_id", activeAreaId] }),
   };
+
   return { layer, highlightedLayer };
 };
 
@@ -57,12 +65,9 @@ export default getLayerStyles;
 
 // dynamic classes does not work with tailwind
 export const linearHeatMapColorsTailclasses = [
-  "bg-[#94f80b]",
-  "bg-[#93ff00]",
-  "bg-[#75e41c]",
-  "bg-[#54c527]",
-  "bg-[#40b02a]",
-  "bg-[#2c9b2a]",
-  "bg-[#198729]",
-  "bg-[#047326]",
+  "bg-[#fff33b]",
+  "bg-[#fdc70c]",
+  "bg-[#f3903f]",
+  "bg-[#ed683c]",
+  "bg-[#e93e3a]",
 ];
