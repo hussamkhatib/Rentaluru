@@ -53,7 +53,7 @@ const ApplyFilter = () => {
   };
 
   return filterPanel ? (
-    <div className="fixed right-8 w-64 top-0 z-10 h-screen text-white bg-[#0D2337]">
+    <div className="fixed right-8 w-64 top-10 z-10 h-screen text-white bg-[#0D2337]">
       <div className="mt-6" />
       <Disclosure title="Rent">
         <RentFilter />

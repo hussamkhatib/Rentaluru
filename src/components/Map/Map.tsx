@@ -7,6 +7,7 @@ import {
   setActiveArea,
   selectIsAreaActive,
 } from "../../redux/activeAreaSlice";
+import Nav from "../Nav";
 import Layers from "./Layers";
 import { clusterLayer } from "./Layers/Clusters/clusters.constant";
 import ToolTip from "./Tooltip";
@@ -65,22 +66,27 @@ const Map = () => {
   }, []);
 
   return (
-    <ReactMap
-      {...viewState}
-      onMove={(evt) => setViewState(evt.viewState)}
-      interactiveLayerIds={
-        isAreaActive ? ["data", "data-highlighted", clusterLayer.id!] : ["data"]
-      }
-      style={{ width: "100vw", height: "100vh" }}
-      mapboxAccessToken={mapboxgl.accessToken}
-      onClick={handleClick}
-      onMouseMove={onHover}
-      mapStyle="mapbox://styles/mapbox/dark-v10"
-      ref={mapRef}
-    >
-      <Layers />
-      <ToolTip hoverInfo={hoverInfo} />
-    </ReactMap>
+    <>
+      <Nav />
+      <ReactMap
+        {...viewState}
+        onMove={(evt) => setViewState(evt.viewState)}
+        interactiveLayerIds={
+          isAreaActive
+            ? ["data", "data-highlighted", clusterLayer.id!]
+            : ["data"]
+        }
+        style={{ width: "100vw", height: "100vh" }}
+        mapboxAccessToken={mapboxgl.accessToken}
+        onClick={handleClick}
+        onMouseMove={onHover}
+        mapStyle="mapbox://styles/mapbox/dark-v10"
+        ref={mapRef}
+      >
+        <Layers />
+        <ToolTip hoverInfo={hoverInfo} />
+      </ReactMap>
+    </>
   );
 };
 
