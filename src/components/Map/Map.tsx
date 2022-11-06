@@ -7,7 +7,7 @@ import {
   setActiveArea,
   selectIsAreaActive,
 } from "../../redux/activeAreaSlice";
-import Polygons from "./Polygons";
+import Layers from "./Layers";
 import ToolTip from "./Tooltip";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
@@ -55,7 +55,7 @@ const Map = () => {
       onMouseMove={onHover}
       mapStyle="mapbox://styles/mapbox/dark-v10"
     >
-      <Polygons />
+      <Layers />
       <ToolTip hoverInfo={hoverInfo} />
     </ReactMap>
   );
