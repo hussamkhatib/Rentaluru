@@ -6,6 +6,9 @@ export const areaApi = createApi({
     baseUrl: "/api/",
   }),
   endpoints: (builder) => ({
+    getAreas: builder.query<any, void>({
+      query: () => "area",
+    }),
     getAreaDetails: builder.query<any, any>({
       query: ({ area_id, queryParam }) => ({
         url: queryParam ? `/area/${area_id}?${queryParam}` : `/area/${area_id}`,
@@ -13,4 +16,4 @@ export const areaApi = createApi({
     }),
   }),
 });
-export const { useGetAreaDetailsQuery } = areaApi;
+export const { useGetAreasQuery, useGetAreaDetailsQuery } = areaApi;

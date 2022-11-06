@@ -19,6 +19,7 @@ export const { setActiveArea, removeActiveArea } = slice.actions;
 
 export const selectActiveArea = (state: any) => state.activeArea;
 export const selectActiveAreaId = (state: any) => state.activeArea?.area_id;
+// TODO: rename the below to something more meaningful
 export const selectIsAreaActive = (state: any) => state.activeArea !== null;
 
 export default slice.reducer;

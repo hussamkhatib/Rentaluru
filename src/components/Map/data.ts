@@ -12,7 +12,7 @@ interface MapSourceData {
       area_id: number;
       name: string;
       pin_code: number;
-      [key:string]: string | number
+      [key: string]: string | number;
     };
     geometry: {
       type: string;
@@ -20,7 +20,7 @@ interface MapSourceData {
     };
   }[];
 }
-const data:MapSourceData = {
+const data: MapSourceData = {
   type: "FeatureCollection",
   crs: {
     type: "name",
@@ -1918,7 +1918,7 @@ const data:MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 214,
-        name: "kumbalagodu po",
+        name: "kumbalagodu",
         pin_code: 560074,
       },
       geometry: {
@@ -2056,7 +2056,7 @@ const data:MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 215,
-        name: "Udayapura SO",
+        name: "Udayapura",
         pin_code: 560082,
       },
       geometry: {
@@ -2661,7 +2661,7 @@ const data:MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 218,
-        name: "VARTHUR",
+        name: "Varthur",
         pin_code: 560087,
       },
       geometry: {
@@ -15154,7 +15154,7 @@ const data:MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 286,
-        name: "BELLANDUR POST OFFICE",
+        name: "Bellandur",
         pin_code: 560103,
       },
       geometry: {
@@ -17755,7 +17755,7 @@ const data:MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 299,
-        name: "Kengeri po",
+        name: "Kengeri",
         pin_code: 560060,
       },
       geometry: {

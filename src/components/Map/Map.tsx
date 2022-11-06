@@ -40,8 +40,6 @@ const Map = () => {
       // @ts-ignore
       const center = feature.geometry?.coordinates;
 
-      console.log({ clusterId, center });
-
       const mapboxSource = mapRef.current.getSource("cluster") as GeoJSONSource;
       mapboxSource.getClusterExpansionZoom(clusterId, (err, zoom) => {
         if (err) return;
@@ -65,9 +63,16 @@ const Map = () => {
     setHoverInfo(hoveredFeature && { property: hoveredFeature, x, y });
   }, []);
 
+  const onNavigate = useCallback(
+    ({ longitude, latitude }: { longitude: number; latitude: number }) => {
+      mapRef.current?.flyTo({ center: [longitude, latitude], duration: 2000 });
+    },
+    []
+  );
+
   return (
     <>
-      <Nav />
+      <Nav onNavigate={onNavigate} />
       <ReactMap
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
