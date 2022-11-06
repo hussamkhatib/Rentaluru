@@ -28,7 +28,7 @@ const Clusters = () => {
 
   return (
     <Source
-      id="earthquakes"
+      id="cluster"
       type="geojson"
       data={data.points}
       cluster={true}
