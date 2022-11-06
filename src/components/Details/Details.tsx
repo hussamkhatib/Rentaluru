@@ -15,9 +15,11 @@ const Details = () => {
     area_id: activeArea.area_id,
     queryParam: filterQuery,
   });
+
   if (isLoading) return <Loader />;
   if (isError) return <div className="text-white">Somthing went wrong</div>;
-  if (!data[0])
+  const { data: details } = data;
+  if (!details[0])
     return (
       <div className="text-white">
         Noone has submitted their room details in this area at the specified
@@ -25,7 +27,7 @@ const Details = () => {
       </div>
     );
   const { avgRent, maxRent, minRent, avgDeposit, minDeposit, maxDeposit } =
-    data[0];
+    details[0];
 
   return (
     <>
