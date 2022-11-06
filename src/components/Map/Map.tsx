@@ -14,7 +14,7 @@ import ToolTip from "./Tooltip";
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 
 const Map = () => {
-  const mapRef = useRef<MapRef>(null);
+  const mapRef = useRef<MapRef>(null!);
   const dispatch = useDispatch();
   const isAreaActive = useSelector(selectIsAreaActive);
   const [viewState, setViewState] = useState({
@@ -29,28 +29,29 @@ const Map = () => {
 
   const handleClick = (e: MapLayerMouseEvent) => {
     const feature = e.features?.[0];
-    console.log(feature);
 
     if (!feature) return dispatch(removeActiveArea());
-
-    // const mapboxSource = mapRef.current.getSource(
-    //   "cluster"
-    // ) as GeoJSONSource;
-
-    // mapboxSource.getClusterExpansionZoom(clusterId, (err, zoom) => {
-    //   if (err) {
-    //     return;
-    //   }
-
-    //   mapRef.current.easeTo({
-    //     center: feature.geometry.coordinates,
-    //     zoom,
-    //     duration: 500,
-    //   });
-    // });
-    // ("polygon");
-
     const { source } = feature;
+
+    if (source === "cluster") {
+      const clusterId = feature.properties?.cluster_id;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      const center = feature.geometry?.coordinates;
+
+      console.log({ clusterId, center });
+
+      const mapboxSource = mapRef.current.getSource("cluster") as GeoJSONSource;
+      mapboxSource.getClusterExpansionZoom(clusterId, (err, zoom) => {
+        if (err) return;
+        mapRef.current.easeTo({
+          center,
+          zoom,
+          duration: 500,
+        });
+      });
+    }
+
     if (source === "polygon") dispatch(setActiveArea(feature.properties));
   };
 
