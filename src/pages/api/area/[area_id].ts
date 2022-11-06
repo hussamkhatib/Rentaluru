@@ -32,15 +32,6 @@ export default async function handler(
             avgDeposit: {
               $avg: "$deposit",
             },
-            avgElectricity: {
-              $avg: "$electricity",
-            },
-            avgWater: {
-              $avg: "$water",
-            },
-            avgTransportation: {
-              $avg: "$transportation",
-            },
             maxRent: {
               $max: "$rent",
             },
@@ -58,6 +49,34 @@ export default async function handler(
       ])
       .toArray();
 
-    return res.status(200).send(data);
+    // return only latitude and longitude
+    const getPoints = await db
+      .collection("reviews")
+      .find(
+        {
+          area_id: Number(area_id),
+        },
+        {
+          projection: {
+            _id: 0,
+            latitude: 1,
+            longitude: 1,
+          },
+        }
+      )
+      .toArray();
+
+    const points = {
+      type: "FeatureCollection",
+      features: getPoints.map((point: any) => ({
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [point.longitude, point.latitude],
+        },
+      })),
+    };
+
+    return res.status(200).send({ data, points });
   }
 }
