@@ -3,7 +3,11 @@ import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../../../redux/areaAPI";
 import { selectFilterQuery } from "../../../../redux/filterQuerySlice";
 import Loader from "../../../Loader";
-import { clusterLayer } from "./clusters.constant";
+import {
+  clusterCountLayer,
+  clusterLayer,
+  unclusteredPointLayer,
+} from "./clusters.constant";
 
 const Clusters = () => {
   const filterQuery = useSelector(selectFilterQuery);
@@ -32,6 +36,8 @@ const Clusters = () => {
       clusterRadius={50}
     >
       <Layer {...clusterLayer} />
+      <Layer {...clusterCountLayer} />
+      <Layer {...unclusteredPointLayer} />
     </Source>
   );
 };
