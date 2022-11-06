@@ -19,7 +19,7 @@ const Polygons = () => {
   );
 
   return (
-    <Source id="my-data" type="geojson" data={data.data}>
+    <Source id="polygon" type="geojson" data={data.data}>
       <Layer {...layer} />
       {activeAreaId && <Layer {...highlightedLayer} />}
     </Source>

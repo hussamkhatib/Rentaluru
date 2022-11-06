@@ -31,7 +31,7 @@ export const getLayerStyles = (
 
   const layer: FillLayer = {
     id: "data",
-    source: "my-data",
+    source: "polygon",
     type: "fill",
     paint: {
       "fill-outline-color": "rgb(52,51,50)",
@@ -45,7 +45,7 @@ export const getLayerStyles = (
 
   const highlightedLayer: FillLayer = {
     id: "data-highlighted",
-    source: "my-data",
+    source: "polygon",
     type: "fill",
     paint: {
       "fill-opacity": 0.25,
