@@ -27,3 +27,5 @@ Team Incredible presents a data visualization website application that allows us
 - `yarn dev`
 
 ## Contributing
+
+- A seperate CONTRIBUTING.md file will be added soon. You can get in touch If you want to contribute now.
