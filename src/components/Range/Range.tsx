@@ -22,10 +22,7 @@ const Range = () => {
           <div
             className={classNames("w-4", linearHeatMapColorsTailclasses[idx])}
           />
-          <span>
-            {kFormatter(Math.ceil(stop[0]))}{" "}
-            {range.length - 1 === idx ? "+" : null}
-          </span>
+          <span>{kFormatter(Math.ceil(stop[0]))} </span>
         </div>
       ))}
     </div>
@@ -35,5 +32,5 @@ const Range = () => {
 export default Range;
 
 function kFormatter(num: number) {
-  return Math.abs(num) > 999 ? Math.abs(num / 1000).toFixed(1) + "k" : num;
+  return Math.abs(num) > 999 ? Math.floor(num / 1000).toFixed(0) + "k" : num;
 }

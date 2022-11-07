@@ -15,9 +15,14 @@ export const linearHeatMapColors = [
 //   "#ffeae1",
 //   "#ffe5e4",
 // ];
-export const getStops = (a: number, b: number) => (colors: any) => {
-  const step = (b - a) / 5;
-  return colors.map((color: any, i: number) => [a + step * i, color]);
+const seq = [0, 10, 25, 50, 100];
+
+export const getStops = (min: number, max: number) => (colors: any) => {
+  const range = max - min;
+  return colors.map((color: any, i: number) => [
+    (range / 100) * seq[i] + min,
+    color,
+  ]);
 };
 
 export const getLayerStyles = (
