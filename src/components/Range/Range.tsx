@@ -1,11 +1,11 @@
-import { useGetGeojsonQuery } from "../../redux/filterAPI";
+import { useGetGeojsonQuery } from "../../app/services/filterAPI";
 import {
   getStops,
   linearHeatMapColors,
   linearHeatMapColorsTailclasses,
 } from "../Map/Layers/Polygons/polygons.utils";
 import classNames from "classnames";
-import { selectFilterQuery } from "../../redux/filterQuerySlice";
+import { selectFilterQuery } from "../../app/services/filterQuerySlice";
 import { useSelector } from "react-redux";
 
 const Range = () => {

@@ -7,7 +7,7 @@ import {
   removeActiveArea,
   selectActiveArea,
   selectIsAreaActive,
-} from "../../redux/activeAreaSlice";
+} from "../../app/services/activeAreaSlice";
 
 const tabs = [
   {

@@ -1,8 +1,8 @@
 import { Source, Layer } from "react-map-gl";
 import { useSelector } from "react-redux";
-import { selectActiveAreaId } from "../../../../redux/activeAreaSlice";
-import { useGetGeojsonQuery } from "../../../../redux/filterAPI";
-import { selectFilterQuery } from "../../../../redux/filterQuerySlice";
+import { selectActiveAreaId } from "../../../../app/services/activeAreaSlice";
+import { useGetGeojsonQuery } from "../../../../app/services/filterAPI";
+import { selectFilterQuery } from "../../../../app/services/filterQuerySlice";
 import getLayerStyles from "./polygons.utils";
 
 const Polygons = () => {

@@ -1,7 +1,7 @@
 import { Source, Layer } from "react-map-gl";
 import { useSelector } from "react-redux";
-import { useGetAreaDetailsQuery } from "../../../../redux/areaAPI";
-import { selectFilterQuery } from "../../../../redux/filterQuerySlice";
+import { useGetAreaDetailsQuery } from "../../../../app/services/areaAPI";
+import { selectFilterQuery } from "../../../../app/services/filterQuerySlice";
 import {
   clusterCountLayer,
   clusterLayer,

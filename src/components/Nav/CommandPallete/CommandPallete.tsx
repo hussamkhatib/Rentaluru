@@ -1,9 +1,9 @@
 import { Dialog, Combobox, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { useGetAreasQuery } from "../../../redux/areaAPI";
+import { useGetAreasQuery } from "../../../app/services/areaAPI";
 import { useDispatch } from "react-redux";
-import { setActiveArea } from "../../../redux/activeAreaSlice";
+import { setActiveArea } from "../../../app/services/activeAreaSlice";
 
 const CommandPalette = ({ onNavigate }: any) => {
   const dispatch = useDispatch();

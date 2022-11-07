@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch } from "react-redux";
-import { setVehicle } from "../../redux/filterSlice";
+import { setVehicle } from "../../app/services/filterSlice";
 
 const VehicleFilter = () => {
   const dispatch = useDispatch();
