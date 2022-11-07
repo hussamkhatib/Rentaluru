@@ -10,7 +10,7 @@ const CommandPalette: FC = ({ onNavigate }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
 
-  const { data: filteredAreas, isLoading, isError } = useGetAreasQuery();
+  const { data: filteredAreas } = useGetAreasQuery(query);
 
   useEffect(() => {
     const callback = (event: KeyboardEvent) => {
