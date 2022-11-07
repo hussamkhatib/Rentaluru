@@ -6,7 +6,7 @@
 
 In the post-pandemic era, property rental pricing has shot up by a substantial margin. Bangalore city - known to be the financial capital of southern India, has witnessed not only rental property upraise but also a sudden movement of the population after the institution of an in-office/hybrid work policy within the corporate sectors. Therefore, there is an immense need for people to speculate detailed information about renting properties before moving into the cities. Current website applications that present property details fail to present information to allow users to comprehend and search for their desired results in less time.
 
-Team Incredible presents a data visualization website application that allows users to consume information about Bangalore city's property rental pricing. We utilize heatmaps to enhance users' visual perceptions of rental property pricing and reduce cognitive load in searching for required information.
+This is a data visualization web application that allows users to consume information about Bangalore city's property rental pricing. We utilize heatmaps to enhance users' visual perceptions of rental property pricing and reduce cognitive load in searching for required information.
 
 ## Technology Stack
 
@@ -29,3 +29,9 @@ Team Incredible presents a data visualization website application that allows us
 ## Contributing
 
 - A seperate CONTRIBUTING.md file will be added soon. You can get in touch If you want to contribute now.
+
+## Roadmap
+
+- Refactor filters
+- Display Details for selected rental property
+- Better TypeScript

@@ -10096,7 +10096,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 256,
-        name: "Bannerghatta Road",
+        name: "Bannerghatta",
         pin_code: 560076,
       },
       geometry: {
@@ -10900,7 +10900,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 261,
-        name: "Koramangala po",
+        name: "Koramangala",
         pin_code: 560034,
       },
       geometry: {
@@ -18664,7 +18664,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 302,
-        name: "J P Nagar PO",
+        name: "J P Nagar",
         pin_code: 560078,
       },
       geometry: {
