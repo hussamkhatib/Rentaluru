@@ -6,7 +6,7 @@ import {
   removeActiveArea,
   setActiveArea,
   selectIsAreaActive,
-} from "../../redux/activeAreaSlice";
+} from "../../app/services/activeAreaSlice";
 import Nav from "../Nav";
 import Layers from "./Layers";
 import { clusterLayer } from "./Layers/Clusters/clusters.constant";

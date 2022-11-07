@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectFilterPanel,
   toggleFilterPanel,
-} from "../../redux/filterPanelSlice";
-import { setFilterQuery } from "../../redux/filterQuerySlice";
-import { selectFilter } from "../../redux/filterSlice";
+} from "../../app/services/filterPanelSlice";
+import { setFilterQuery } from "../../app/services/filterQuerySlice";
+import { selectFilter } from "../../app/services/filterSlice";
 import Disclosure from "../Disclosure";
 import DepositFilter from "./DepositFilter";
 // import RatingFilter from "./RatingFilter";

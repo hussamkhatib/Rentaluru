@@ -7,8 +7,8 @@ import {
 import { StarIcon as OutlineStarIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { useSelector } from "react-redux";
-import { useGetAreaDetailsQuery } from "../../redux/areaAPI";
-import { selectFilterQuery } from "../../redux/filterQuerySlice";
+import { useGetAreaDetailsQuery } from "../../app/services/areaAPI";
+import { selectFilterQuery } from "../../app/services/filterQuerySlice";
 import Loader from "../Loader";
 
 const Rating = () => {

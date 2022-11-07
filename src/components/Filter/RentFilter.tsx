@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectRentFilter, setRent } from "../../redux/filterSlice";
+import { selectRentFilter, setRent } from "../../app/services/filterSlice";
 import Listbox from "../Listbox";
 import TextField from "../TextField";
 

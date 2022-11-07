@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectDepositFilter, setDeposit } from "../../redux/filterSlice";
+import {
+  selectDepositFilter,
+  setDeposit,
+} from "../../app/services/filterSlice";
 import Listbox from "../Listbox";
 import TextField from "../TextField";
 
