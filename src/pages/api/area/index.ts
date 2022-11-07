@@ -9,7 +9,19 @@ export default async function handler(
 
   const { method } = req;
   if (method === "GET") {
-    const data = await db.collection("coordinates").find().toArray();
+    const { name } = req.query;
+
+    const options =
+      name === ""
+        ? {}
+        : {
+            name: {
+              $regex: name,
+              $options: "i",
+            },
+          };
+
+    const data = await db.collection("coordinates").find(options).toArray();
 
     return res.status(200).send(data);
   }
