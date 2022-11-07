@@ -1,11 +1,11 @@
 import { Dialog, Combobox, Transition } from "@headlessui/react";
-import { FC, Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useGetAreasQuery } from "../../../redux/areaAPI";
 import { useDispatch } from "react-redux";
 import { setActiveArea } from "../../../redux/activeAreaSlice";
 
-const CommandPalette: FC = ({ onNavigate }: any) => {
+const CommandPalette = ({ onNavigate }: any) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
