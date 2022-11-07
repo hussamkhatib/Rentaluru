@@ -2,7 +2,6 @@ import { Source, Layer } from "react-map-gl";
 import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../../../redux/areaAPI";
 import { selectFilterQuery } from "../../../../redux/filterQuerySlice";
-import Loader from "../../../Loader";
 import {
   clusterCountLayer,
   clusterLayer,
@@ -12,7 +11,7 @@ import {
 const Clusters = () => {
   const filterQuery = useSelector(selectFilterQuery);
   const activeArea = useSelector((state: any) => state.activeArea);
-  const { data, isLoading, isError } = useGetAreaDetailsQuery(
+  const { data, isFetching, isError } = useGetAreaDetailsQuery(
     {
       area_id: activeArea?.area_id,
       queryParam: filterQuery,
@@ -21,9 +20,7 @@ const Clusters = () => {
       skip: !activeArea?.area_id,
     }
   );
-  if (!activeArea) return null;
-  if (isLoading) return <Loader />;
-
+  if (!activeArea || isFetching) return null;
   if (isError || !data) return null;
 
   return (
