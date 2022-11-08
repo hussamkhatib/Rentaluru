@@ -2,14 +2,19 @@ import { Source, Layer } from "react-map-gl";
 import { useSelector } from "react-redux";
 import { selectActiveAreaId } from "../../../../app/services/activeAreaSlice";
 import { useGetGeojsonQuery } from "../../../../app/services/filterAPI";
-import { selectFilterQuery } from "../../../../app/services/filterQuerySlice";
+import { useTypedSelector } from "../../../../app/store";
+import { getQueryParams } from "../../../../features/filter/filter.helper";
 import getLayerStyles from "./polygons.utils";
 
 const Polygons = () => {
-  const filterQuery = useSelector(selectFilterQuery);
   const activeAreaId = useSelector(selectActiveAreaId);
 
-  const { data, isLoading, isError } = useGetGeojsonQuery(filterQuery);
+  const filters = useTypedSelector((state) => state.filter);
+
+  const { data, isLoading, isError } = useGetGeojsonQuery(
+    getQueryParams(filters)
+  );
+
   if (isLoading || isError) return null;
   const { layer, highlightedLayer } = getLayerStyles(
     activeAreaId,

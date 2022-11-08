@@ -5,15 +5,17 @@ import {
 import React from "react";
 import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../app/services/areaAPI";
-import { selectFilterQuery } from "../../app/services/filterQuerySlice";
+import { useTypedSelector } from "../../app/store";
+import { getQueryParams } from "../../features/filter/filter.helper";
 import Loader from "../Loader";
 
 const Details = () => {
-  const filterQuery = useSelector(selectFilterQuery);
   const activeArea = useSelector((state: any) => state.activeArea);
+  const filters = useTypedSelector((state) => state.filter);
+
   const { data, isLoading, isError } = useGetAreaDetailsQuery({
     area_id: activeArea.area_id,
-    queryParam: filterQuery,
+    queryParam: getQueryParams(filters),
   });
 
   if (isLoading) return <Loader />;

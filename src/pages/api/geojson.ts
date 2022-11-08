@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectToDatabase from "../../lib/mongodb";
-import APIFilter from "../../APIFilter";
 import data from "../../components/Map/data";
+import APIFilter from "../../features/filter/APIFilter";
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,6 +12,7 @@ export default async function handler(
 
   if (method === "GET") {
     const { match } = APIFilter(query);
+
     const result = await db
       .collection("reviews")
       .aggregate([

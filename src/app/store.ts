@@ -5,7 +5,7 @@ import { areaApi } from "./services/areaAPI";
 import { filterApi } from "./services/filterAPI";
 import filterPanelSlice from "./services/filterPanelSlice";
 import filterQuerySlice from "./services/filterQuerySlice";
-import filterSlice from "./services/filterSlice";
+import filterSlice from "../features/filter/filterSlice";
 
 export const store = configureStore({
   reducer: {

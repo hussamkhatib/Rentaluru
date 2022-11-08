@@ -8,15 +8,13 @@ import { StarIcon as OutlineStarIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../app/services/areaAPI";
-import { selectFilterQuery } from "../../app/services/filterQuerySlice";
 import Loader from "../Loader";
 
 const Rating = () => {
-  const filterQuery = useSelector(selectFilterQuery);
   const activeArea = useSelector((state: any) => state.activeArea);
   const { data, isLoading, isError } = useGetAreaDetailsQuery({
     area_id: activeArea.area_id,
-    queryParam: filterQuery,
+    // queryParam: filterQuery,
   });
   if (isLoading || isError) return <Loader />;
   if (!data[0])
