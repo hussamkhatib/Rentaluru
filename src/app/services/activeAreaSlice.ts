@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 const initialState = null;
 
@@ -17,9 +18,10 @@ export const slice = createSlice({
 
 export const { setActiveArea, removeActiveArea } = slice.actions;
 
-export const selectActiveArea = (state: any) => state.activeArea;
+export const selectActiveArea = (state: RootState) => state.activeArea;
 export const selectActiveAreaId = (state: any) => state.activeArea?.area_id;
 // TODO: rename the below to something more meaningful
-export const selectIsAreaActive = (state: any) => state.activeArea !== null;
+export const selectIsAreaActive = (state: RootState) =>
+  state.activeArea !== null;
 
 export default slice.reducer;

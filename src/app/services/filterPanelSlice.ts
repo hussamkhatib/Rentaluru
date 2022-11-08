@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import type { RootState } from "../store";
 
 const initialState = false;
 
@@ -14,5 +15,5 @@ export const slice = createSlice({
 
 export const { toggleFilterPanel } = slice.actions;
 
-export const selectFilterPanel = (state: any) => state.filterPanel;
+export const selectFilterPanel = (state: RootState) => state.filterPanel;
 export default slice.reducer;

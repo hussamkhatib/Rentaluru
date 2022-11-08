@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import Filter from "../components/Filter";
 import LeftPanel from "../components/LeftPanel";
 import Map from "../components/Map";
 import Range from "../components/Range";
 import Head from "next/head";
+import FilterView from "../features/filter/FilterView";
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <LeftPanel />
         <Map />
         <Range />
-        <Filter />
+        <FilterView />
       </div>
     </>
   );

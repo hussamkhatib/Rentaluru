@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectToDatabase from "../../../lib/mongodb";
-import APIFilter from "../../../APIFilter";
+// import APIFilter from "../../../APIFilter";
 // import geojson from "../../../components/Map/data";
 
 export default async function handler(
@@ -12,14 +12,14 @@ export default async function handler(
 
   const { method, query } = req;
   if (method === "GET") {
-    const { match } = APIFilter(query);
+    // const { match } = APIFilter(query);
 
     const data = await db
       .collection("reviews")
       .aggregate([
         {
           $match: {
-            ...match,
+            // ...match,
             area_id: Number(area_id),
           },
         },

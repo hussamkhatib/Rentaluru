@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RootState } from "../store";
 
 const initialState = null;
 
@@ -14,5 +15,5 @@ export const slice = createSlice({
 
 export const { setFilterQuery } = slice.actions;
 
-export const selectFilterQuery = (state: any) => state.filterQuery;
+export const selectFilterQuery = (state: RootState) => state.filterQuery;
 export default slice.reducer;
