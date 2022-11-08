@@ -7,6 +7,7 @@ import {
   setActiveArea,
   selectIsAreaActive,
 } from "../../app/services/activeAreaSlice";
+import { ActiveAreaState } from "../../app/types/activeArea";
 import NavView from "../nav/NavView";
 import Layers from "./Layers";
 import { clusterLayer } from "./Layers/Clusters/clusters.constant";
@@ -50,8 +51,10 @@ const MapView = () => {
         });
       });
     }
-
-    if (source === "polygon") dispatch(setActiveArea(feature.properties));
+    if (source === "polygon") {
+      const properties = feature.properties as ActiveAreaState;
+      dispatch(setActiveArea(properties));
+    }
   };
 
   const onHover = useCallback((event: MapLayerMouseEvent) => {
