@@ -1,25 +1,30 @@
+import { useGetAreaDetailsQuery } from "../../app/services/areaAPI";
+import { useTypedSelector } from "../../app/store";
 import {
   ArrowTrendingDownIcon,
   ArrowTrendingUpIcon,
 } from "@heroicons/react/20/solid";
-import React from "react";
-import { useSelector } from "react-redux";
-import { useGetAreaDetailsQuery } from "../../app/services/areaAPI";
-import { useTypedSelector } from "../../app/store";
-import { getQueryParams } from "../../features/filter/filter.helper";
-import Loader from "../Loader";
+import { selectFilterQueryParams } from "../filter/filterSlice";
+import Loader from "../../common/Loader";
 
 const Details = () => {
-  const activeArea = useSelector((state: any) => state.activeArea);
-  const filters = useTypedSelector((state) => state.filter);
+  const activeArea = useTypedSelector((state) => state.activeArea);
+  const queryParam = useTypedSelector(selectFilterQueryParams);
 
-  const { data, isLoading, isError } = useGetAreaDetailsQuery({
-    area_id: activeArea.area_id,
-    queryParam: getQueryParams(filters),
-  });
-
+  const { data, isLoading, isError } = useGetAreaDetailsQuery(
+    {
+      area_id: activeArea?.area_id,
+      queryParam,
+    },
+    {
+      skip: !activeArea?.area_id,
+    }
+  );
   if (isLoading) return <Loader />;
   if (isError) return <div className="text-white">Somthing went wrong</div>;
+  // FIXME
+  if (!data) return null;
+
   const { data: details } = data;
   if (!details[0])
     return (
@@ -43,6 +48,7 @@ const Details = () => {
     </>
   );
 };
+
 export default Details;
 
 const DetailsCard = ({

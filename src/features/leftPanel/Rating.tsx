@@ -8,7 +8,7 @@ import { StarIcon as OutlineStarIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useGetAreaDetailsQuery } from "../../app/services/areaAPI";
-import Loader from "../Loader";
+import Loader from "../../common/Loader";
 
 const Rating = () => {
   const activeArea = useSelector((state: any) => state.activeArea);
