@@ -6,20 +6,22 @@ import {
 } from "@heroicons/react/20/solid";
 import { selectFilterQueryParams } from "../filter/filterSlice";
 import Loader from "../../common/Loader";
+import { selectActiveAreaId } from "../../app/services/activeAreaSlice";
 
 const Details = () => {
-  const activeArea = useTypedSelector((state) => state.activeArea);
+  const area_id = useTypedSelector(selectActiveAreaId);
   const queryParam = useTypedSelector(selectFilterQueryParams);
 
   const { data, isLoading, isError } = useGetAreaDetailsQuery(
     {
-      area_id: activeArea?.area_id,
+      area_id,
       queryParam,
     },
     {
-      skip: !activeArea?.area_id,
+      skip: !area_id,
     }
   );
+
   if (isLoading) return <Loader />;
   if (isError) return <div className="text-white">Somthing went wrong</div>;
   // FIXME
