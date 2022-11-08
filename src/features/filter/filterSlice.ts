@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "../../app/store";
 // import type { RootState } from "../../app/store";
 import { initialState } from "./filter.constant";
+import { getQueryParams } from "./filter.helper";
 import { BHKType, FilterPayloadAction } from "./filter.types";
 
 export const slice = createSlice({
@@ -25,3 +27,6 @@ export const slice = createSlice({
 export default slice.reducer;
 
 export const { resetFilters, setFilter, setBHK } = slice.actions;
+
+export const selectFilterQueryParams = (state: RootState) =>
+  getQueryParams(state.filter);
