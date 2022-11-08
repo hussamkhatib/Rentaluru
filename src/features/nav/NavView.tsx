@@ -1,9 +1,8 @@
-import { FC } from "react";
 import CommandPalette from "./CommandPallete";
 // import CommandPalette from "../CommandPalette";
 // import SelectMapType from "./SelectMapType";
 
-const Nav = ({ onNavigate }: any) => {
+const NavView = ({ onNavigate }: any) => {
   return (
     <nav className="fixed w-full top-0 z-30 bg-[#0D2337] flex h-10 justify-between items-center px-2 md:px-4">
       <h1 className="text-xl text-white  font-semibold">Rentaluru</h1>
@@ -14,4 +13,4 @@ const Nav = ({ onNavigate }: any) => {
   );
 };
 
-export default Nav;
+export default NavView;

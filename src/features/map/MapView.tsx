@@ -7,14 +7,14 @@ import {
   setActiveArea,
   selectIsAreaActive,
 } from "../../app/services/activeAreaSlice";
-import Nav from "../Nav";
+import NavView from "../nav/NavView";
 import Layers from "./Layers";
 import { clusterLayer } from "./Layers/Clusters/clusters.constant";
 import ToolTip from "./Tooltip";
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 
-const Map = () => {
+const MapView = () => {
   const mapRef = useRef<MapRef>(null!);
   const dispatch = useDispatch();
   const isAreaActive = useSelector(selectIsAreaActive);
@@ -72,7 +72,7 @@ const Map = () => {
 
   return (
     <>
-      <Nav onNavigate={onNavigate} />
+      <NavView onNavigate={onNavigate} />
       <ReactMap
         {...viewState}
         onMove={(evt) => setViewState(evt.viewState)}
@@ -95,4 +95,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default MapView;

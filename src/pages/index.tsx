@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
-import Map from "../components/Map";
-import Range from "../components/Range";
 import Head from "next/head";
 import FilterView from "../features/filter/FilterView";
 import LeftPanelView from "../features/leftPanel/LeftPanelView";
+import MapView from "../features/map/MapView";
+import LegendView from "../features/legend/LegendView";
 
 const Home: NextPage = () => {
   return (
@@ -14,8 +14,8 @@ const Home: NextPage = () => {
       </Head>
       <div className="overflow-hidden">
         <LeftPanelView />
-        <Map />
-        <Range />
+        <MapView />
+        <LegendView />
         <FilterView />
       </div>
     </>
