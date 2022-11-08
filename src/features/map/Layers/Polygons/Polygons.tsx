@@ -2,18 +2,16 @@ import { Source, Layer } from "react-map-gl";
 import { selectActiveAreaId } from "../../../../app/services/activeAreaSlice";
 import { useGetGeojsonQuery } from "../../../../app/services/filterAPI";
 import { useTypedSelector } from "../../../../app/store";
-import { getQueryParams } from "../../../../features/filter/filter.helper";
+import { selectFilterQueryParams } from "../../../filter/filterSlice";
 import getLayerStyles from "./polygons.utils";
 
 const Polygons = () => {
   const area_id = useTypedSelector(selectActiveAreaId);
-  const filters = useTypedSelector((state) => state.filter);
+  const queryParam = useTypedSelector(selectFilterQueryParams);
 
-  const { data, isLoading, isError } = useGetGeojsonQuery(
-    getQueryParams(filters)
-  );
+  const { data, isLoading, isError } = useGetGeojsonQuery(queryParam);
 
-  if (isLoading || isError || !area_id) return null;
+  if (isLoading || isError) return null;
   const { layer, highlightedLayer } = getLayerStyles(
     area_id,
     "avgRent",

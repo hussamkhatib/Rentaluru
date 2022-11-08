@@ -26,7 +26,7 @@ export const getStops = (min: number, max: number) => (colors: any) => {
 };
 
 export const getLayerStyles = (
-  activeAreaId: number,
+  activeAreaId: number | null,
   property: string,
   min: number,
   max: number
