@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import connectToDatabase from "../../lib/mongodb";
-import data from "../../components/Map/data";
 import APIFilter from "../../features/filter/APIFilter";
+import data from "../../features/map/data";
 
 export default async function handler(
   req: NextApiRequest,
