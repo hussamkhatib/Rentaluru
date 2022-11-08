@@ -1,12 +1,12 @@
 import mapboxgl, { GeoJSONSource, MapLayerMouseEvent } from "mapbox-gl";
 import { useCallback, useRef, useState } from "react";
 import ReactMap, { MapRef } from "react-map-gl";
-import { useDispatch, useSelector } from "react-redux";
 import {
   removeActiveArea,
   setActiveArea,
   selectIsAreaActive,
 } from "../../app/services/activeAreaSlice";
+import { useAppDispatch, useTypedSelector } from "../../app/store";
 import { ActiveAreaState } from "../../app/types/activeArea";
 import NavView from "../nav/NavView";
 import Layers from "./Layers";
@@ -17,8 +17,8 @@ mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 
 const MapView = () => {
   const mapRef = useRef<MapRef>(null!);
-  const dispatch = useDispatch();
-  const isAreaActive = useSelector(selectIsAreaActive);
+  const dispatch = useAppDispatch();
+  const isAreaActive = useTypedSelector(selectIsAreaActive);
   const [viewState, setViewState] = useState({
     longitude: 77.57,
     latitude: 12.89,

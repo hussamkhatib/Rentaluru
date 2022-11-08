@@ -1,6 +1,10 @@
 // Helper function to get the query string for the API url
 
-const APIFilter = (query: any) => {
+interface Query {
+  type?: string;
+}
+
+const APIFilter = (query: Query) => {
   const { type } = query;
   let match = {};
 

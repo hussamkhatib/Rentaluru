@@ -1,7 +1,8 @@
 import { Source, Layer } from "react-map-gl";
-import { useSelector } from "react-redux";
+import { selectActiveAreaId } from "../../../../app/services/activeAreaSlice";
 import { useGetAreaDetailsQuery } from "../../../../app/services/areaAPI";
-import { selectFilterQuery } from "../../../../app/services/filterQuerySlice";
+import { useTypedSelector } from "../../../../app/store";
+import { selectFilterQueryParams } from "../../../filter/filterSlice";
 import {
   clusterCountLayer,
   clusterLayer,
@@ -9,18 +10,20 @@ import {
 } from "./clusters.constant";
 
 const Clusters = () => {
-  const filterQuery = useSelector(selectFilterQuery);
-  const activeArea = useSelector((state: any) => state.activeArea);
+  const queryParam = useTypedSelector(selectFilterQueryParams);
+  const area_id = useTypedSelector(selectActiveAreaId);
+
   const { data, isFetching, isError } = useGetAreaDetailsQuery(
     {
-      area_id: activeArea?.area_id,
-      queryParam: filterQuery,
+      area_id,
+      queryParam,
     },
     {
-      skip: !activeArea?.area_id,
+      skip: !area_id,
     }
   );
-  if (!activeArea || isFetching) return null;
+
+  if (!area_id || isFetching) return null;
   if (isError || !data) return null;
 
   return (

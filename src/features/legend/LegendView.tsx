@@ -1,18 +1,18 @@
 import { useGetGeojsonQuery } from "../../app/services/filterAPI";
 import classNames from "classnames";
-import { selectFilterQuery } from "../../app/services/filterQuerySlice";
-import { useSelector } from "react-redux";
 import { kFormatter } from "./legend.helper";
 import {
   getStops,
   linearHeatMapColors,
   linearHeatMapColorsTailclasses,
 } from "../map/Layers/Polygons/polygons.utils";
+import { useTypedSelector } from "../../app/store";
+import { selectFilterQueryParams } from "../filter/filterSlice";
 
 const LegendView = () => {
-  const filterQuery = useSelector(selectFilterQuery);
-
+  const filterQuery = useTypedSelector(selectFilterQueryParams);
   const { data, isLoading, isError } = useGetGeojsonQuery(filterQuery);
+
   if (isLoading || isError) return null;
 
   const range = getStops(data.min, data.max)(linearHeatMapColors);
