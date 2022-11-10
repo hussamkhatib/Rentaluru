@@ -19,3 +19,8 @@ export type FilterPayloadAction = {
   key: FilterKey;
   value: any;
 };
+
+export type RentFilterPayload = {
+  type: "minRent" | "maxRent";
+  value: number;
+};

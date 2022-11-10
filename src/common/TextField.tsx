@@ -20,7 +20,7 @@ const TextField = forwardRef<
       type={type}
       className={classNames(
         fullWidth && "w-full",
-        "block w-full px-2 py-1 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm",
+        "block w-full px-2 py-1 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-none appearance-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm",
         className
       )}
       {...passThroughProps}

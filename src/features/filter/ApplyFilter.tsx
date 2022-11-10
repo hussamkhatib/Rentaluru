@@ -1,6 +1,7 @@
 import { selectFilterPanel } from "../../app/services/filterPanelSlice";
 import { useTypedSelector } from "../../app/store";
 import BHKFilter from "./BHKFilter";
+import RentFilter from "./RentFilter";
 
 const ApplyFilter = () => {
   const filterPanel = useTypedSelector(selectFilterPanel);
@@ -9,6 +10,7 @@ const ApplyFilter = () => {
     <div className="fixed right-8 w-64 top-10 z-10 h-screen text-white bg-[#0D2337]">
       <div className="mt-6  px-2">
         <BHKFilter />
+        <RentFilter />
       </div>
     </div>
   ) : null;
