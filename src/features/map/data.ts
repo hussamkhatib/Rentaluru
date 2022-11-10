@@ -6275,7 +6275,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 235,
-        name: "SHIVARAM KARANTH NAGAR PO",
+        name: "SHIVARAM KARANTH NAGAR",
         pin_code: 560077,
       },
       geometry: {
@@ -7433,7 +7433,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 238,
-        name: "AIR FORCE STATION YELAHANKA",
+        name: "Air Force Station Yelahanka",
         pin_code: 560063,
       },
       geometry: {
@@ -12097,7 +12097,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 269,
-        name: "MAHADEVAPURAM PO",
+        name: "Mahadevapura",
         pin_code: 560048,
       },
       geometry: {
@@ -14989,7 +14989,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 285,
-        name: "marathahalli colony",
+        name: "marathahalli",
         pin_code: 560037,
       },
       geometry: {
@@ -15908,7 +15908,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 290,
-        name: "Bannerghatta PO",
+        name: "Bannerghatta Post Office",
         pin_code: 560083,
       },
       geometry: {

@@ -1,18 +1,18 @@
 import { useAppDispatch, useTypedSelector } from "../../app/store";
 import Chip from "../../common/Chip";
 import { BHKType } from "./filter.types";
-import { setBHK } from "./filterSlice";
+import { selectBhk, setBHKFilter } from "./filterSlice";
 
 const BHKFilter = () => {
-  const BHKFilter = useTypedSelector((state) => state.filter.bhk);
   const dispatch = useAppDispatch();
+  const BHKFilter = useTypedSelector(selectBhk);
 
   const clickHandler = (filter: BHKType) => {
-    dispatch(setBHK(filter));
+    dispatch(setBHKFilter(filter));
   };
 
   return (
-    <>
+    <div className="py-2">
       <div className="pb-1">BHK type</div>
       <div className="flex gap-2 flex-wrap">
         {BHKFilter.map((filter) => (
@@ -25,7 +25,7 @@ const BHKFilter = () => {
           </Chip>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

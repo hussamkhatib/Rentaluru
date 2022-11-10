@@ -5,6 +5,9 @@ const ToolTip = ({ hoverInfo }: any) => {
       className="fixed z-10 m-2 p-1 max-w-xs pointer-events-none text-[#00FFA4] bg-[#102B44] rounded-xl px-3"
       style={{ left: hoverInfo.x, top: hoverInfo.y }}
     >
+      {hoverInfo.property?.point_count && (
+        <span>Number of areas: {hoverInfo.property.point_count}</span>
+      )}
       <span>{hoverInfo?.property?.name}</span>
     </div>
   );
