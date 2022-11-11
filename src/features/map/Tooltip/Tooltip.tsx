@@ -6,7 +6,7 @@ const ToolTip = ({ hoverInfo }: any) => {
       style={{ left: hoverInfo.x, top: hoverInfo.y }}
     >
       {hoverInfo.property?.point_count && (
-        <span>Number of areas: {hoverInfo.property.point_count}</span>
+        <span>Number of Houses: {hoverInfo.property.point_count}</span>
       )}
       <span>{hoverInfo?.property?.name}</span>
     </div>
