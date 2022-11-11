@@ -1,5 +1,5 @@
 import { Source, Layer } from "react-map-gl";
-import { selectActiveAreaId } from "../../../../app/services/activeAreaSlice";
+import { selectActiveAreaId } from "../../../leftPanel/leftPanelSlice";
 import { useGetAreaDetailsQuery } from "../../../../app/services/areaAPI";
 import { useTypedSelector } from "../../../../app/store";
 import { selectFilterQueryParams } from "../../../filter/filterSlice";

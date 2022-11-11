@@ -1,5 +1,5 @@
 import { XMarkIcon } from "@heroicons/react/20/solid";
-import { removeActiveArea } from "../../app/services/activeAreaSlice";
+import { hideLeftPanel } from "./leftPanelSlice";
 import { useAppDispatch } from "../../app/store";
 
 const CloseLeftPanelButton = () => {
@@ -9,7 +9,7 @@ const CloseLeftPanelButton = () => {
     <button
       aria-label="close button"
       onClick={() => {
-        dispatch(removeActiveArea());
+        dispatch(hideLeftPanel());
       }}
       className="bg-[#153757] rounded-full"
     >

@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import activeAreaSlice from "./services/activeAreaSlice";
+import leftPanelSlice from "../features/leftPanel/leftPanelSlice";
 import { areaApi } from "./services/areaAPI";
 import { filterApi } from "./services/filterAPI";
 import filterPanelSlice from "./services/filterPanelSlice";
-import filterQuerySlice from "./services/filterQuerySlice";
 import filterSlice from "../features/filter/filterSlice";
 
 export const store = configureStore({
@@ -13,8 +12,7 @@ export const store = configureStore({
     [filterApi.reducerPath]: filterApi.reducer,
     filterPanel: filterPanelSlice,
     filter: filterSlice,
-    activeArea: activeAreaSlice,
-    filterQuery: filterQuerySlice,
+    leftPanel: leftPanelSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

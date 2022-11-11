@@ -2,7 +2,7 @@ import { Dialog, Combobox, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { useGetAreasQuery } from "../../app/services/areaAPI";
-import { setActiveArea } from "../../app/services/activeAreaSlice";
+import { setActiveArea } from "../leftPanel/leftPanelSlice";
 import { useAppDispatch } from "../../app/store";
 
 const CommandPalette = ({ onNavigate }: any) => {

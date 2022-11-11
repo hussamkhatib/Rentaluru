@@ -2,12 +2,12 @@ import mapboxgl, { GeoJSONSource, MapLayerMouseEvent } from "mapbox-gl";
 import { useCallback, useRef, useState } from "react";
 import ReactMap, { MapRef } from "react-map-gl";
 import {
-  removeActiveArea,
+  hideLeftPanel,
   setActiveArea,
   selectIsAreaActive,
-} from "../../app/services/activeAreaSlice";
+} from "../leftPanel/leftPanelSlice";
 import { useAppDispatch, useTypedSelector } from "../../app/store";
-import { ActiveAreaState } from "../../app/types/activeArea";
+import { ActiveAreaState } from "../leftPanel/leftPanel.types";
 import NavView from "../nav/NavView";
 import Layers from "./Layers";
 import { clusterLayer } from "./Layers/Clusters/clusters.constant";
@@ -32,7 +32,7 @@ const MapView = () => {
   const handleClick = (e: MapLayerMouseEvent) => {
     const feature = e.features?.[0];
 
-    if (!feature) return dispatch(removeActiveArea());
+    if (!feature) return dispatch(hideLeftPanel());
     const { source } = feature;
 
     if (source === "cluster") {

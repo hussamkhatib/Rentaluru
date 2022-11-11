@@ -6,7 +6,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { selectFilterQueryParams } from "../filter/filterSlice";
 import Loader from "../../common/Loader";
-import { selectActiveAreaId } from "../../app/services/activeAreaSlice";
+import { selectActiveAreaId } from "./leftPanelSlice";
 
 const Details = () => {
   const area_id = useTypedSelector(selectActiveAreaId);

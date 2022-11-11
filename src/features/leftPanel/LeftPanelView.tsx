@@ -1,10 +1,9 @@
-import { selectActiveArea } from "../../app/services/activeAreaSlice";
+import { selectActiveArea } from "./leftPanelSlice";
 import { useTypedSelector } from "../../app/store";
 import Tabs from "../../common/Tabs";
 import CloseLeftPanelButton from "./CloseLeftPanelButton";
 import Details from "./Details";
 import { tabs } from "./leftPanel.constant";
-// import Rating from "./Rating";
 
 const LeftPanelView = () => {
   const activeArea = useTypedSelector(selectActiveArea);
