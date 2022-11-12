@@ -10,12 +10,13 @@ const AreaTooltip = (props: any) => {
   return (
     <>
       <span>{name}</span>
-
-      <div className="space-x-2 text-sm text-gray-400  divide-x">
-        <span>Avg Rent: {avgRentCeil}</span>
-        <span className="pl-2">Min Rent: {minRentCeil}</span>
-        <span className="pl-2">Max Rent: {maxRentCeil}</span>
-      </div>
+      {avgRent && (
+        <div className="space-x-2 text-sm text-gray-400 divide-x">
+          <span>Avg Rent: {avgRentCeil}</span>
+          <span className="pl-2">Min Rent: {minRentCeil}</span>
+          <span className="pl-2">Max Rent: {maxRentCeil}</span>
+        </div>
+      )}
     </>
   );
 };
