@@ -63,7 +63,6 @@ const MapView = () => {
     }
 
     if (source === "polygon") {
-      // const properties = properties as ActiveAreaState;
       dispatch(setActiveArea(properties as ActiveAreaState));
     }
   };

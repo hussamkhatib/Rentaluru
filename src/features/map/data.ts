@@ -2777,7 +2777,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 219,
-        name: "Jigani SO",
+        name: "Jigani",
         pin_code: 560105,
       },
       geometry: {
