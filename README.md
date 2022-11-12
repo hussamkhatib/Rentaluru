@@ -27,10 +27,3 @@ This is a data visualization web application that allows users to consume inform
 ## Contributing
 
 - A seperate CONTRIBUTING.md file will be added soon. You can get in touch If you want to contribute now.
-
-## Roadmap
-
-- Add all areas
-- Refactor filters
-- Display Details for selected rental property
-- Better TypeScript

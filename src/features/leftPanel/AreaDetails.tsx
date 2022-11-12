@@ -8,7 +8,7 @@ import { selectFilterQueryParams } from "../filter/filterSlice";
 import Loader from "../../common/Loader";
 import { selectActiveAreaId } from "./leftPanelSlice";
 
-const Details = () => {
+const AreaDetails = () => {
   const area_id = useTypedSelector(selectActiveAreaId);
   const queryParam = useTypedSelector(selectFilterQueryParams);
 
@@ -51,7 +51,7 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default AreaDetails;
 
 const DetailsCard = ({
   title,

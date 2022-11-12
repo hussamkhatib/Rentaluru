@@ -1,8 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import APIFilter from "../../../features/filter/APIFilter";
 import connectToDatabase from "../../../lib/mongodb";
-// import APIFilter from "../../../APIFilter";
-// import geojson from "../../../components/Map/data";
 
 export default async function handler(
   req: NextApiRequest,
@@ -53,30 +51,24 @@ export default async function handler(
     // return only latitude and longitude
     const getPoints = await db
       .collection("reviews")
-      .find(
-        {
-          ...match,
-          area_id: Number(area_id),
-        },
-        {
-          projection: {
-            _id: 0,
-            latitude: 1,
-            longitude: 1,
-          },
-        }
-      )
+      .find({
+        ...match,
+        area_id: Number(area_id),
+      })
       .toArray();
 
     const points = {
       type: "FeatureCollection",
-      features: getPoints.map((point: any) => ({
-        type: "Feature",
-        geometry: {
-          type: "Point",
-          coordinates: [point.longitude, point.latitude],
-        },
-      })),
+      features: getPoints.map((point: any) => {
+        return {
+          type: "Feature",
+          properties: point,
+          geometry: {
+            type: "Point",
+            coordinates: [point.longitude, point.latitude],
+          },
+        };
+      }),
     };
 
     return res.status(200).send({ data, points });

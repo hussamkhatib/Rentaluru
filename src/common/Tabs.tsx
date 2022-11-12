@@ -25,7 +25,7 @@ const Tabs: FC<Props> = ({ tabs, children }) => {
                 isCurrent
                   ? "border-[#00FFA4]"
                   : "border-transparent hover:border-[#00FFA4]",
-                "group text-white inline-flex items-center border-b-2 py-3 px-1 text-sm font-medium"
+                "group text-white inline-flex items-center border-b-2 p-1 text-sm font-medium"
               )}
             >
               {tab}
@@ -33,7 +33,6 @@ const Tabs: FC<Props> = ({ tabs, children }) => {
           );
         })}
       </div>
-      <div className="border-t border-[#8BA7C1] opacity-20" />
       {Children.toArray(children)[activeTab]}
     </div>
   );

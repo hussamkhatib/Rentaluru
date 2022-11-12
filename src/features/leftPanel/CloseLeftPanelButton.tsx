@@ -13,7 +13,7 @@ const CloseLeftPanelButton = () => {
       }}
       className="bg-[#153757] rounded-full"
     >
-      <XMarkIcon className="h-6 w-6 text-[#00FFA4]" aria-hidden />
+      <XMarkIcon className="h-5 w-5 text-[#00FFA4]" aria-hidden />
     </button>
   );
 };

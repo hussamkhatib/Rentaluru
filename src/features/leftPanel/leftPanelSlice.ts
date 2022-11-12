@@ -23,7 +23,11 @@ export const slice = createSlice({
 
 export const { setActiveArea, setActiveHouse, hideLeftPanel } = slice.actions;
 
-export const selectActiveArea = (state: RootState) => state.leftPanel;
+export const selectActiveArea = (state: RootState) =>
+  state.leftPanel?.activeArea;
+
+export const selectActiveHouse = (state: RootState) =>
+  state.leftPanel?.activeHouse;
 
 export const selectActiveAreaId = (state: RootState) =>
   state.leftPanel?.activeArea ? state.leftPanel.activeArea?.area_id : null;
