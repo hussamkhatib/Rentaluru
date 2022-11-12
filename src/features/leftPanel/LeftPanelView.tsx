@@ -12,9 +12,9 @@ const LeftPanelView = () => {
   const isPanelOpen = Boolean(activeArea);
 
   return isPanelOpen ? (
-    <div className="fixed z-10 mt-16 h-3/4 bg-[#0D2337] w-[25rem] p-4 m-5 rounded-2xl overflow-auto overflow-y-scroll scrollbar-thin scrollbar-thumb-[#102B44] scrollbar-track-blue-300 ">
-      <div className="flex pb-1     justify-between border-b-2 border-[#00FFA4]">
-        <p className=" text-[#00FFA4]">{activeArea?.name}</p>
+    <div className="fixed z-10 mt-16 h-3/4  bg-secondary-800 w-[25rem] p-4 m-5 rounded-2xl overflow-auto overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary-700 scrollbar-track-blue-300 ">
+      <div className="flex pb-1 justify-between border-b-2 border-main-300">
+        <p className=" text-main-300">{activeArea?.name}</p>
         <CloseLeftPanelButton />
       </div>
       {activeHouse?.title ? (

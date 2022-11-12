@@ -2,7 +2,7 @@ const Loader = () => {
   return (
     <div className="flex justify-center pt-10 w-full">
       <svg
-        className="mx-4 h-5 w-full animate-spin text-[#00FFA4]"
+        className="mx-4 h-5 w-full animate-spin text-main-300"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

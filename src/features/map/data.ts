@@ -1918,7 +1918,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 214,
-        name: "kumbalagodu",
+        name: "Kumbalagodu",
         pin_code: 560074,
       },
       geometry: {

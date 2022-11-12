@@ -13,7 +13,7 @@ const HouseDetails = () => {
         return (
           <div
             key={detail.key}
-            className="w-40 h-36 rounded-xl bg-[#102B44] space-y-1.5  flex flex-col items-center justify-center  text-white"
+            className="w-40 h-36 rounded-xl bg-secondary-700 space-y-1.5  flex flex-col items-center justify-center  text-white"
           >
             {detail?.name ? (
               <>

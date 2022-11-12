@@ -23,8 +23,8 @@ const Tabs: FC<Props> = ({ tabs, children }) => {
               key={tab}
               className={classNames(
                 isCurrent
-                  ? "border-[#00FFA4]"
-                  : "border-transparent hover:border-[#00FFA4]",
+                  ? "border-main-300"
+                  : "border-transparent hover:border-main-300",
                 "group text-white inline-flex items-center border-b-2 p-1 text-sm font-medium"
               )}
             >

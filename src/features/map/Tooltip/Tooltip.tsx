@@ -7,7 +7,7 @@ const ToolTip = ({ hoverInfo }: any) => {
 
   return (
     <div
-      className="fixed z-10 m-2 p-1 max-w-xs pointer-events-none text-white bg-[#102B44] rounded-xl flex flex-col px-3"
+      className="fixed z-10 m-2 p-1 max-w-xs pointer-events-none text-white bg-secondary-700 rounded-xl flex flex-col px-3"
       style={{ left: x, top: y }}
     >
       {property?.title && <HouseTooltip {...property} />}

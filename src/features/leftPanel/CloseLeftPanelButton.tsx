@@ -11,9 +11,9 @@ const CloseLeftPanelButton = () => {
       onClick={() => {
         dispatch(hideLeftPanel());
       }}
-      className="bg-[#153757] rounded-full"
+      className="bg-secondary-600 rounded-full"
     >
-      <XMarkIcon className="h-5 w-5 text-[#00FFA4]" aria-hidden />
+      <XMarkIcon className="h-5 w-5 text-main-300" aria-hidden />
     </button>
   );
 };

@@ -66,9 +66,9 @@ const DetailsCard = ({
 }) => {
   return (
     <div className="py-3 px-4">
-      <div className="bg-[#153757] rounded mt-2  px-2 py-1 text-white text-lg flex justify-between">
+      <div className="bg-secondary-600 rounded mt-2  px-2 py-1 text-white text-lg flex justify-between">
         <span>Average {title}</span>
-        <span className="text-[#00FFA4]">₹{Math.ceil(avg)}</span>
+        <span className="text-main-200">₹{Math.ceil(avg)}</span>
       </div>
       <div>
         <div className="  mt-1  px-2 text-white text-lg flex justify-between">
