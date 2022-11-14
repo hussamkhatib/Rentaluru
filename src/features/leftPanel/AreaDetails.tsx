@@ -71,14 +71,14 @@ const DetailsCard = ({
         <span className="text-main-200">₹{Math.ceil(avg)}</span>
       </div>
       <div>
-        <div className="  mt-1  px-2 text-white text-lg flex justify-between">
+        <div className="mt-1 px-2 text-white text-lg flex justify-between">
           <span className="flex items-center">
             <ArrowTrendingDownIcon className="text-[#00FFA4] h-6 px-1 " /> Min $
             {title}
           </span>
           <span className="">₹{min}</span>
         </div>
-        <div className="  mt-1  px-2 text-white text-lg flex justify-between">
+        <div className="mt-1 px-2 text-white text-lg flex justify-between">
           <span className="flex items-center">
             <ArrowTrendingUpIcon className="text-red-500 h-6 px-1 " /> Max $
             {title}

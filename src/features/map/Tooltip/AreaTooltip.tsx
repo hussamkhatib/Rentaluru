@@ -1,6 +1,4 @@
 const AreaTooltip = (props: any) => {
-  console.log(props);
-
   const { name, avgRent, minRent, maxRent } = props;
 
   const avgRentCeil = Math.ceil(avgRent);

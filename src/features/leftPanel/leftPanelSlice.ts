@@ -9,8 +9,10 @@ export const slice = createSlice({
   initialState,
   reducers: {
     setActiveArea: (state, action: PayloadAction<ActiveAreaState>) => {
-      if (state) state.activeArea = action.payload;
-      else return { activeArea: action.payload };
+      if (state) {
+        state.activeArea = action.payload;
+        state.activeHouse = null;
+      } else return { activeArea: action.payload };
     },
     setActiveHouse: (state, action: PayloadAction<any>) => {
       if (state) state.activeHouse = action.payload;

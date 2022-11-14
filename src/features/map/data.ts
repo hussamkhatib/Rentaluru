@@ -2190,7 +2190,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 216,
-        name: "agram",
+        name: "Agram",
         pin_code: 560007,
       },
       geometry: {
@@ -11171,7 +11171,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 263,
-        name: "HAL II STAGE HO",
+        name: "HAL 2nd Stage",
         pin_code: 560008,
       },
       geometry: {
