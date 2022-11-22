@@ -1,16 +1,19 @@
-import { BHKType, FilterState } from "./filter.types";
+import { ArrayFilter, FilterState } from "./filter.types";
 
 export const getQueryParams = (filter: FilterState) => {
   const { minRent, maxRent, bhk, vehicle } = filter;
-  const bhkQuery = `type=${bhkToQuery(bhk)}`;
+  const bhkQuery = `type=${arrayToQuery(bhk)}`;
+  const vehicleQuery = `parking=${arrayToQuery(vehicle)}`;
   const rentQuery = rentToQuery(minRent, maxRent);
 
-  const queryParams = [bhkQuery, rentQuery].filter(Boolean).join("&");
+  const queryParams = [bhkQuery, rentQuery, vehicleQuery]
+    .filter(Boolean)
+    .join("&");
   return queryParams;
 };
 
-function bhkToQuery(bhk: BHKType[]) {
-  return bhk
+function arrayToQuery<T>(array: ArrayFilter<T>[]) {
+  return array
     .filter((item) => item.selected)
     .map((item) => item.type)
     .join(",");

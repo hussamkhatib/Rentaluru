@@ -1,9 +1,4 @@
-// TODO: add comments
-
 import { FilterState } from "./filter.types";
-
-// for parking
-// const vehicleFilters = ["TWO_WHEELER", "FOUR_WHEELER", "BOTH", "NONE"];
 
 export enum BHK {
   HALF = "1 RK",
@@ -12,6 +7,13 @@ export enum BHK {
   THREE = "3 BHK",
   FOUR = "4 BHK",
   FOUR_PLUS = "4+ BHK",
+}
+
+export enum Vehicle {
+  TWO_WHEELER = "2 Wheeler",
+  FOUR_WHEELER = "4 Wheeler",
+  BOTH = "Both",
+  NONE = "None",
 }
 
 // Redux
@@ -50,5 +52,26 @@ export const initialState: FilterState = {
       selected: false,
     },
   ],
-  vehicle: [],
+  vehicle: [
+    {
+      type: "TWO_WHEELER",
+      name: Vehicle.TWO_WHEELER,
+      selected: false,
+    },
+    {
+      type: "FOUR_WHEELER",
+      name: Vehicle.FOUR_WHEELER,
+      selected: false,
+    },
+    {
+      type: "BOTH",
+      name: Vehicle.BOTH,
+      selected: false,
+    },
+    {
+      type: "NONE",
+      name: Vehicle.NONE,
+      selected: false,
+    },
+  ],
 };

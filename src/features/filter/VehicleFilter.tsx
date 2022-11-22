@@ -1,21 +1,21 @@
 import { useAppDispatch, useTypedSelector } from "../../app/store";
 import Chip from "../../common/Chip";
-import { BHK } from "./filter.constant";
+import { Vehicle } from "./filter.constant";
 import { ArrayFilter } from "./filter.types";
-import { selectBhk, setBHKFilter } from "./filterSlice";
+import { selectVehicle, setVehicleFilter } from "./filterSlice";
 
-const BHKFilter = () => {
+const VehicleFilter = () => {
   const dispatch = useAppDispatch();
-  const BHKFilter = useTypedSelector(selectBhk);
+  const vehicleFilter = useTypedSelector(selectVehicle);
 
-  const clickHandler = (filter: ArrayFilter<BHK>) =>
-    dispatch(setBHKFilter(filter));
+  const clickHandler = (filter: ArrayFilter<Vehicle>) =>
+    dispatch(setVehicleFilter(filter));
 
   return (
     <div className="py-2">
-      <div className="pb-1">BHK type</div>
+      <div className="pb-1">Vehicle Filter</div>
       <div className="flex gap-2 flex-wrap">
-        {BHKFilter.map((filter) => (
+        {vehicleFilter.map((filter) => (
           <Chip
             key={filter.type}
             selected={filter.selected}
@@ -29,4 +29,4 @@ const BHKFilter = () => {
   );
 };
 
-export default BHKFilter;
+export default VehicleFilter;

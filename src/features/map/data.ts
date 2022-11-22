@@ -8139,7 +8139,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 243,
-        name: "krishnarajapuram po",
+        name: "krishnarajapuram",
         pin_code: 560036,
       },
       geometry: {
@@ -11004,7 +11004,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 262,
-        name: "Doorvani Nagar",
+        name: "Dooravani Nagar",
         pin_code: 560016,
       },
       geometry: {
@@ -11772,7 +11772,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 267,
-        name: "C V RAMAN NAGAR PO",
+        name: "C V RAMAN NAGAR",
         pin_code: 560093,
       },
       geometry: {
@@ -11943,7 +11943,7 @@ const data: MapSourceData = {
       type: "Feature",
       properties: {
         area_id: 268,
-        name: "NEW THIPPASANDRA",
+        name: "New Thippasandra",
         pin_code: 560075,
       },
       geometry: {

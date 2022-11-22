@@ -1,7 +1,7 @@
-import { BHK } from "./filter.constant";
+import { BHK, Vehicle } from "./filter.constant";
 
-export interface BHKType {
-  name: BHK;
+export interface ArrayFilter<Type> {
+  name: Type;
   type: string;
   selected: boolean;
 }
@@ -9,8 +9,8 @@ export interface BHKType {
 export type FilterState = {
   minRent: number | null;
   maxRent: number | null;
-  bhk: BHKType[];
-  vehicle: string[];
+  bhk: ArrayFilter<BHK>[];
+  vehicle: ArrayFilter<Vehicle>[];
 };
 
 export type FilterKey = keyof FilterState;

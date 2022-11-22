@@ -4,21 +4,15 @@ interface Query {
   type?: string;
   min_rent?: number;
   max_rent?: number;
+  parking?: string;
 }
 
 const APIFilter = (query: Query) => {
-  const { type, min_rent, max_rent } = query;
+  const { type, min_rent, max_rent, parking } = query;
   let match = {};
 
-  if (type) {
-    const bhk = type.split(",");
-    match = {
-      ...match,
-      type: {
-        $in: bhk,
-      },
-    };
-  }
+  type && (match = splitArrayAndMatch(match, type, "type"));
+  parking && (match = splitArrayAndMatch(match, parking, "parking"));
 
   if (min_rent || max_rent) {
     match = {
@@ -34,3 +28,14 @@ const APIFilter = (query: Query) => {
 };
 
 export default APIFilter;
+
+function splitArrayAndMatch(match: any, query: string, key: string) {
+  const queryArray = query.split(",");
+
+  return {
+    ...match,
+    [key]: {
+      $in: queryArray,
+    },
+  };
+}
