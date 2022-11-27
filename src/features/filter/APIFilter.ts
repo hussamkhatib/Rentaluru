@@ -1,4 +1,21 @@
-// Helper function to get the query string for the API url
+/**
+ * @description: Helper function that transforms the query string
+ * to a format that mongo uses to filter documents in the $match stage of the aggregation pipeline
+ * @link : https://www.mongodb.com/docs/manual/reference/operator/aggregation/match
+ * @example
+ * @input - query:  {
+ *   type: 'BHK1,BHK2,BHK3,BHK4',
+ *   min_rent: '10000',
+ *   max_rent: '25000',
+ *   parking: 'TWO_WHEELER'
+ * }
+ *
+ * @output - {
+ *  type: { '$in': [ 'BHK1', 'BHK2', 'BHK3', 'BHK4' ] },
+ *  parking: { '$in': [ 'TWO_WHEELER' ] },
+ *   rent: { '$gte': 10000, '$lte': 25000 }
+ * }
+ */
 
 interface Query {
   type?: string;
