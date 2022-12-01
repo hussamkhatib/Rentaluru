@@ -32,7 +32,7 @@ import {
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async (context) => {
-    const res = store.dispatch(getGeojson.initiate());
+    const res = store.dispatch(getGeojson.initiate("remove this"));
     console.log(res, "res");
 
     await Promise.all(getRunningOperationPromises());
