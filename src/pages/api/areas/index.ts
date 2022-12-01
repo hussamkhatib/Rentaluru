@@ -11,15 +11,14 @@ export default async function handler(
   if (method === "GET") {
     const { name } = req.query;
 
-    const options =
-      name === ""
-        ? {}
-        : {
-            name: {
-              $regex: name,
-              $options: "i",
-            },
-          };
+    const options = name
+      ? {
+          name: {
+            $regex: name,
+            $options: "i",
+          },
+        }
+      : {};
 
     const data = await db.collection("coordinates").find(options).toArray();
 
