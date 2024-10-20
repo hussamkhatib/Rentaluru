@@ -16,6 +16,7 @@ import {
   unclusteredPointLayer,
 } from "./Layers/Clusters/clusters.constant";
 import ToolTip from "./Tooltip";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = process.env.NEXT_PUBLIC_ACCESS_TOKEN || "";
 
@@ -92,11 +93,11 @@ const MapView = () => {
         interactiveLayerIds={
           isAreaActive
             ? [
-                "data",
-                "data-highlighted",
-                clusterLayer.id!,
-                unclusteredPointLayer.id!,
-              ]
+              "data",
+              "data-highlighted",
+              clusterLayer.id!,
+              unclusteredPointLayer.id!,
+            ]
             : ["data"]
         }
         style={{ width: "100vw", height: "100vh" }}
