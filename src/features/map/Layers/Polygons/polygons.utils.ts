@@ -1,4 +1,4 @@
-import type { FillLayer } from "react-map-gl";
+import type { FillLayerSpecification } from "mapbox-gl";
 
 export const linearHeatMapColors = [
   "#C1DBF2",
@@ -34,7 +34,7 @@ export const getLayerStyles = (
   const lightStops = getStops(min, max)(linearHeatMapColors);
   const darkStops = getStops(min, max)(linearHeatMapColors);
 
-  const layer: FillLayer = {
+  const layer: FillLayerSpecification = {
     id: "data",
     source: "polygon",
     type: "fill",
@@ -48,7 +48,7 @@ export const getLayerStyles = (
     ...(activeAreaId && { filter: ["!=", "area_id", activeAreaId] }),
   };
 
-  const highlightedLayer: FillLayer = {
+  const highlightedLayer: FillLayerSpecification = {
     id: "data-highlighted",
     source: "polygon",
     type: "fill",
