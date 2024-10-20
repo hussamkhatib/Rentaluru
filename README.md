@@ -23,7 +23,3 @@ This is a data visualization web application that allows users to consume inform
 - `cp .env.example .env`
 - fill the env variable with your credentials
 - `yarn dev`
-
-## Contributing
-
-- A seperate CONTRIBUTING.md file will be added soon. You can get in touch If you want to contribute now.
