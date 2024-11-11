@@ -1,3 +1,4 @@
+
 import classnames from "classnames";
 import { FC } from "react";
 
@@ -22,3 +23,5 @@ const Chip: FC<Props> = ({ selected, children, clickHandler }) => {
 };
 
 export default Chip;
+
+// $r.props.listPageProperties

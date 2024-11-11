@@ -44,6 +44,7 @@ export default async function handler(
       ])
       .toArray();
 
+    console.log(result.length);
     let idx = 0;
     data["features"].forEach((area) => {
       if (result[idx]?._id === area.properties.area_id) {

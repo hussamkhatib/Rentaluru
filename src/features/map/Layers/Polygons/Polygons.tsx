@@ -19,6 +19,10 @@ const Polygons = () => {
     data.max
   );
 
+  if (area_id === 244) {
+    console.log(data.data, layer, highlightedLayer);
+  }
+
   return (
     <Source id="polygon" type="geojson" data={data.data}>
       <Layer {...layer} />

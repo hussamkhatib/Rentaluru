@@ -53,7 +53,7 @@ const MapView = () => {
           "cluster"
         ) as GeoJSONSource;
         mapboxSource.getClusterExpansionZoom(clusterId, (err, zoom) => {
-          if (err) return;
+          if (err || !zoom) return;
           mapRef.current.easeTo({
             center,
             zoom,
