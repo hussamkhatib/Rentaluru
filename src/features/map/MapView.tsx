@@ -41,7 +41,7 @@ const MapView = () => {
     const { source, layer, properties, geometry } = feature;
 
     if (source === "cluster") {
-      if (layer.id === "unclustered-point") {
+      if (layer?.id === "unclustered-point") {
         dispatch(setActiveHouse(properties));
       } else {
         const clusterId = properties?.cluster_id;
